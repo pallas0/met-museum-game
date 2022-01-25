@@ -14,9 +14,9 @@ const timeLeft = document.querySelector("#timeleft");
 // let gameOption3;
 
 const gameChoicesObj = {
-  gameOption1: { objectId: "5" },
-  gameOption2: { objectId: "5" },
-  gameOption3: { objectId: "5" },
+  option1: { objectId: "5" },
+  option2: { objectId: "5" },
+  option3: { objectId: "5" },
 };
 
 console.log(gameChoicesObj);
