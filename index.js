@@ -9,9 +9,23 @@ const score = document.querySelector("#scorekeeper");
 const timeLeft = document.querySelector("#timeleft");
 
 //option1 = win, option2 and 3 = loss
-let gameOption1 = 0;
-let gameOption2 = 0;
-let gameOption3 = 0;
+// let gameOption1;
+// let gameOption2;
+// let gameOption3;
+
+const gameChoicesObj = {
+  gameOption1: { objectId: "5" },
+  gameOption2: { objectId: "5" },
+  gameOption3: { objectId: "5" },
+};
+
+console.log(gameChoicesObj);
+
+// console.log(gameChoicesObj.gameOption1[objectId]);
+for (const gameObj in gameChoicesObj) {
+  console.log(gameChoicesObj[gameObj].objectId);
+  //   debugger;
+}
 
 function newRound() {
   // random number generator
@@ -25,8 +39,9 @@ function newRound() {
   4. pass objectIdArray into a new function, which runs a forEach loop, which passes each index into https://collectionapi.metmuseum.org/public/collection/v1/objects/`${apiObjectNum}`
 */
 
-  // pass 3 objectId's into following array
-  const gameChoicesArray = [];
+  function randomNum() {
+    Math.floor(Math.random() * 494);
+  }
 
   fetch(
     `https://collectionapi.metmuseum.org/public/collection/v1/search?q=cat&hasImages=true`
@@ -36,14 +51,12 @@ function newRound() {
     .then((data) => {
       const catQueryId = data.objectIDs;
       console.log(catQueryId);
-      for (let i = 1; i <= 3; i++) {
-        let randomNum = Math.floor(Math.random() * 494);
-        debugger;
-        gameOption = catQueryId[randomNum];
-        // gameChoicesArray.push(catQueryId[randomNum]);
-      }
+      //   gameOption1 = catQueryId[randomNum];
+      //   gameOption2 = catQueryId[randomNum];
+      //   gameOption3 = catQueryId[randomNum];
+
+      console.log(gameOption1, gameOption2, gameOption3);
     });
-  console.log(gameChoicesArray);
 
   //   fetch("url")
   //     .then((res) => res.json())
