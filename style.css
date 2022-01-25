@@ -43,3 +43,7 @@ li.scoreboard {
 #score-skip {
     margin: auto;
 }
+#redheader {
+    height: 50px;
+    background: #e03
+}

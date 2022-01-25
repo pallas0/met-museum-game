@@ -8,15 +8,16 @@
 	</head>
 	<body>
     
-        <div class="row mb-3">
+        <div class="row">
+            <div id="redheader"></div>
             <header class="row">
-                <h1 id="title">Welcome to Met Guess</h1>
-                <p id="about-the-game">Learn about the artists in the Met Museum Collection by correctly choosing the artist who created the work displayed below</p>
+                <div class="row containergi">
+                    <h1 id="title">Welcome to Met Guess</h1>
+                </div>
+                <div class="col-md-3" id="col1-placeholder"></div>
+                <p id="about-the-game" class="col-md-6">Learn about the artists in the Met Museum Collection by correctly choosing the artist who created the work displayed below</p>
+                <div class="col-md-3" id="col3-placeholder"></div>
             </header>
-
-
-
-            
             <div class="col-md-3"></div>
 
             <div id="card" class="col-md-6">
@@ -28,7 +29,6 @@
                             <li class="game-option" id="objectID-3">Option 3</li>   
                         </ul><!--end of game choices-->
                 </div>
-                    <hr>
                 <div id="score-skip" class="">
                     <ul id="score">
                         <li class="scoreboard" id="option1" >X</li>
@@ -37,7 +37,6 @@
                     </ul>
                     <button id="skip" class="">Next >></button>
                 </div>
-                    <hr>
                 <div id="gamestats" class="">
                     <span class="" id="scorekeeper">Score: XX / YY</span>
                     <span class="" id="timeleft">Time Left: XX:XX</span>
