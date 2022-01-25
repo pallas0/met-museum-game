@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Met Museum Card Game</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Met Guess</title>
         <link rel="stylesheet" href="style.css">
 	</head>
     <header>
@@ -9,14 +10,50 @@
         <p>Learn about the artists in the Met Museum Collection by correctly choosing the artist who created the work displayed below</p>
     </header>
 	<body>
-        <div id="game-board">
-            <div id="card">
-                <img src="https://plchldr.co/i/500x500?&bg=E8E6A2&fc=ffffff" id="main-image"> 
-                <span id="art"></span>
+        <div id="container" class="">
+            <div class=""><p>FIRST COLUMN HELLO!!!</p></div>    
+            <div id="card" class="">
+                    <img src="https://plchldr.co/i/500x500?&bg=220022&fc=ffffff" id="main-image"> 
+                    <div id="gamepiece-holder" class="">
+                        <ul id="game-pieces" class="">
+                            <li class="game-option" id="objectID-1">Option 1</li>
+                            <li class="game-option" id="objectID-2">Option 2</li>
+                            <li class="game-option" id="objectID-3">Option 3</li>   
+                        </ul><!--end of game choices-->
+                    </div>
+                    <hr>
+                    <div id="score-skip" class="">
+                            <ul id="score">
+                                <li class="scoreboard" id="option1" >X</li>
+                                <li class="scoreboard" id="option2" >X</li>
+                                <li class="scoreboard" id="option3" >X</li>
+                            </ul>
+                            <button id="skip" class="">Next >></button>
+                    </div>
+                    <hr>
+                    <div id="gamestats" class="">
+                        <span class="" id="scorekeeper">Score: XX / YY</span>
+                        <span class="" id="timeleft">Time Left: XX:XX</span>
+                    </div>
             </div><!--end of card-->
-        </div><!--end of gameboard-->
-        <div id="modalPopup">
-
+            <div class=""><p class="">3RD COLUMN HELLO!!!</p></div> <!--empty thirds grid?-->
         </div>
+    <!--end of gameboard-->
+        <!--
+        <div id="modalPopup">
+            <div id="modalCard">
+                <row>
+                    <column>
+                        <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-image"> 
+                    </column>
+                    <column>
+                        <p class="object-title"></p>
+                        <p class="object-artist"></p>
+                        <p class="object-year-created"></p>
+                    </column>
+                </row>
+
+            </div>
+        </div>-->
 	</body>
 </html>
