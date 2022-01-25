@@ -44,18 +44,9 @@ function searchResults(data) {
                 fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectToFind}`)
                 .then((resp) => resp.json())
                 .then((data) => {
-                    //get the artist name from the constituents block of the object
-                    if (data.artistDisplayName.name) {
-                        //if the artist name exists then set the object parameters
-                    gameOptions[option].artist = data.constituents[0].name
-                }
-                else (
-                    //if the artist name doesn't exist console log this
-                    console.log("that one didn\'t have constituents")
-                )
+                    gameOptions[option].artist = data.artistDisplayName
                 })
-            }
-
+    }
 }
 console.log(gameOptions)
 // function findArtistDetails(objectID){
