@@ -14,34 +14,18 @@ const timeLeft = document.querySelector("#timeleft");
 // let gameOption3;
 
 const gameChoicesObj = {
-  gameOption1: { objectId: "5" },
-  gameOption2: { objectId: "5" },
-  gameOption3: { objectId: "5" },
+  gameOption1: { objectId: "" },
+  gameOption2: { objectId: "" },
+  gameOption3: { objectId: "" },
 };
-
+// console.log(gameChoicesObj);
 console.log(gameChoicesObj);
-
-// console.log(gameChoicesObj.gameOption1[objectId]);
-for (const gameObj in gameChoicesObj) {
-  console.log(gameChoicesObj[gameObj].objectId);
-  //   debugger;
-}
+console.log(gameChoicesObj.gameOption1);
+console.log(gameChoicesObj.gameOption1["objectId"]);
 
 function newRound() {
   // random number generator
-
-  /*
-  // psuedocode:
-  1. create array inside newRound() function called objectIdArray[]
-  2. Place fetch().then().then() into a new function. Return a randomized object ID, push ID into objectIdArray.
-  3. Run function 3 times, so objectIdArray has 3 values
-  
-  4. pass objectIdArray into a new function, which runs a forEach loop, which passes each index into https://collectionapi.metmuseum.org/public/collection/v1/objects/`${apiObjectNum}`
-*/
-
-  function randomNum() {
-    Math.floor(Math.random() * 494);
-  }
+  //   let randomNum = Math.floor(Math.random() * 494);
 
   fetch(
     `https://collectionapi.metmuseum.org/public/collection/v1/search?q=cat&hasImages=true`
@@ -50,40 +34,63 @@ function newRound() {
     .then((res) => res.json())
     .then((data) => {
       const catQueryId = data.objectIDs;
-      console.log(catQueryId);
-      //   gameOption1 = catQueryId[randomNum];
-      //   gameOption2 = catQueryId[randomNum];
-      //   gameOption3 = catQueryId[randomNum];
-
-      console.log(gameOption1, gameOption2, gameOption3);
+      //   console.log(catQueryId);
+      for (let gameChoice in gameChoicesObj) {
+        gameChoicesObj[gameChoice].objectId =
+          catQueryId[Math.floor(Math.random() * 494)];
+      }
+      console.log(gameChoicesObj);
     });
 
-  //   fetch("url")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data[4]);
-  //       if (data.message === "ObjectID not found") {
-  //         console.log("object not found in API. Re-running function");
-  //         newRound();
-  //       } else if (
-  //         data.primaryImageSmall === "" ||
-  //         data.artistDisplayName === "" ||
-  //         data.accessionYear === "" ||
-  //         data.title === ""
-  //       ) {
-  //         console.log("Query failed. Running newRound() again");
-  //         newRound();
-  //       } else {
-  //         console.log(apiObjectNum);
-  //         console.log("image url: ", data.primaryImageSmall);
-  //         console.log("artist name: ", data.artistDisplayName);
-  //         console.log("year: ", data.accessionYear);
-  //         console.log("title: ", data.title);
+  /*
+    const gameChoicesObj = {
+  gameOption1: { objectId: "" },
+  gameOption2: { objectId: "" },
+  gameOption3: { objectId: "" },
+};
+ */
 
-  //         mainImage.src = data.primaryImageSmall;
-  //         mainImage.style.width = "350px";
-  //       }
-  //     });
+  /*
+  1. run randomNum generator 1-3
+  2. pass that number into gameChoicesObj[`gameOption${num}`], to populate DOM
+  3. For correct choice, pass in ".winner" class attribute into <li>
+  4. run if else statement, if other numbers are != randomNum, then only use that to fill in options2 and 3
+  */
+  const indexCorrect = Math.floor(Math.random() * (4 - 1) + 1);
+
+  console.log(gameChoicesObj.gameOption1.objectId);
+
+  fetch(
+    `https://collectionapi.metmuseum.org/public/collection/v1/objects/${
+      gameChoicesObj[`gameOption${indexCorrect}`].objectId
+    }`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+
+      //   if (data.message === "ObjectID not found") {
+      //     console.log("object not found in API. Re-running function");
+      //     newRound();
+      //   } else if (
+      //     data.primaryImageSmall === "" ||
+      //     data.artistDisplayName === "" ||
+      //     data.accessionYear === "" ||
+      //     data.title === ""
+      //   ) {
+      //     console.log("Query failed. Running newRound() again");
+      //     newRound();
+      //   } else {
+      //     console.log(apiObjectNum);
+      //     console.log("image url: ", data.primaryImageSmall);
+      //     console.log("artist name: ", data.artistDisplayName);
+      //     console.log("year: ", data.accessionYear);
+      //     console.log("title: ", data.title);
+
+      //     mainImage.src = data.primaryImageSmall;
+      //     mainImage.style.width = "350px";
+      //   }
+    });
 }
 
 newRound();
