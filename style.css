@@ -1,0 +1,49 @@
+html * {
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    list-style: none;
+    list-style-type: none;
+    position:relative;
+    float: none;
+    text-align: center;
+    padding: 0px
+}
+li.game-option {
+    padding: 20px;
+    position: relative;
+    background: #555;
+    margin: 5px;
+    display: inline-block;
+}
+li.game-option:hover {
+    background-color: #880077;
+  }
+
+li.scoreboard {
+    padding: 15px;
+    background-color: #005500;
+    margin: 5px;
+    display: inline-block;
+
+}
+#gamepiece-holder, 
+#score-skip {
+    float: none;
+    display: inline-block;
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score-skip {
+    margin: auto;
+}
+#redheader {
+    height: 50px;
+    background: #e03
+}
