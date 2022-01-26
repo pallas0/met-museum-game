@@ -59,29 +59,6 @@ function goSearch(searchTerm) {
 //this is the object that will store our game options
 //first the objectID is filled from picking three random numbers from our search-set
 //then the artist value should be filled in by a second fetch call to each of the relevant objects
-const gameOptions = {
-  option1: {
-    objectID: 01,
-    artist: "a",
-    image: "url",
-    title: "1",
-    year: "1",
-  },
-  option2: {
-    objectID: 02,
-    artist: "b",
-    image: "url",
-    title: "1",
-    year: "1",
-  },
-  option3: {
-    objectID: 03,
-    artist: "c",
-    image: "url",
-    title: "1",
-    year: "1",
-  },
-};
 
 
 function searchResults(data) {
@@ -161,8 +138,6 @@ function initialLoad() {
   let correctAnswerElement = `option${randomNum(1, 4)}`;
   //create a variable to store the correct answer object
   randomizeWinnerOptions();
-
-  goSearch();
   //set the id of each of the board pieces to match the input objectid
   option1.setAttribute("data-id", gameOptions.option1.objectID);
   option2.setAttribute("data-id", gameOptions.option2.objectID);
@@ -174,7 +149,6 @@ function initialLoad() {
   option2.textContent = gameOptions.option2.artist;
   option3.textContent = gameOptions.option3.artist;
 }
-initialLoad()
 
 initialLoad();
 
