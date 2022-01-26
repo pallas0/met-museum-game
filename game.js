@@ -8,8 +8,9 @@ const timeLeft = document.querySelector("#timeleft");
 
 const baseSearchParam = "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13"
 
-function randomNum(max) {
-    return Math.floor(Math.random() * max);
+//returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max.
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
   }
 
 function goSearch(searchTerm) {
@@ -43,7 +44,8 @@ function searchResults(data) {
     console.log(data)
     //this fills in our game pieces with randomly chosen objects
     for (let option in gameOptions) {
-        gameOptions[option].objectID = data.objectIDs[randomNum(3)]
+        // debugger
+        gameOptions[option].objectID = data.objectIDs[randomNum(1,500)]
         let objectToFind = gameOptions[option].objectID
         console.log(objectToFind)
             //use our three objectIDs to then search for each object and gather data
@@ -71,6 +73,7 @@ function reverseLookUp(objectIdToLookUp){
 //console.log(gameOptions)
 goSearch()
 
+let answerKey = {}
 const mockPieces = {
     "option1": {
         "objectID": 12345, 
@@ -86,10 +89,19 @@ const mockPieces = {
           "objectID": 101112, 
           "artist": "Humanist Painter",
           "image": "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy"
+      },
+      "correct": {
+        "objectID": "",
+        "artist": "",
+        "image": "url"
       }
 }
 
 function initialLoad() {
+    // pick a random dom element to make the correct answer
+    let correctAnswerElement = `option${randomNum(1,4)}`
+    //create a variable to store the correct answer object
+    const correctAnswerObj = mockPieces.correct
     //set the id of each of the board pieces to match the input objectid
     option1.id = mockPieces.option1.objectID
     option2.id = mockPieces.option2.objectID
@@ -97,11 +109,35 @@ function initialLoad() {
     //populate the main image and store the object id as the winner
     //winningChoice = option[randomNum()]
     debugger
-    mainImage.id = mockPieces.option[correctAnswer]
-    //we need to fill the main image, and then check answers against the main image id
-    let correctAnswer = `option${randomNum(3)}`
+    
+    // new! added a correct field to the dataset - its randomly filled on page load with the props of one of the three options
+    // this then gives us a "source of truth" for all the comparisons we'd need to do.
 
-    option1.addEventListener('click', function(e){
+
+
+    option1.addEventListener('click', function(event){
         checkAnswer(event.target)
     })
+    chooseCorrect()
+    
+    //we need to popupate the main image
+    //mainImage.id = mockPieces.option[correctAnswer]
+}
+
+function chooseCorrect(){
+    // correctAnswerObj.objectID = 
+    // Object.assign(answeKey, )
+
+    //let randomPick = 'option + randomNum(1,4)
+    console.log(Object.keys(mockPieces.randomPick));
+    answerKey = {
+        "correct": {
+            "objectID": "",
+            "artist": "",  
+            "image": "url"
+          }
+
+          
+    }
+    
 }
