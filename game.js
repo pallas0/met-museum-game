@@ -75,6 +75,9 @@ function searchResults(data) {
         // -->possible issue here is what if there is no displayName attribute for the object in the api?
         gameOptions[option].artist = data.artistDisplayName;
         gameOptions[option].image = data.primaryImageSmall;
+        gameOptions[option].title = data.title;
+        gameOptions[option].year = data.objectEndDate;
+
       });
   }
 }
@@ -125,6 +128,7 @@ const mockPieces = {
 };
 
 function initialLoad() {
+  goSearch();
   // pick a random dom element to make the correct answer
   let correctAnswerElement = `option${randomNum(1, 4)}`;
   //create a variable to store the correct answer object
