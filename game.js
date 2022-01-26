@@ -6,9 +6,11 @@ const option3 = document.querySelector("#objectID-3");
 const score = document.querySelector("#scorekeeper");
 const timeLeft = document.querySelector("#timeleft");
 
-let playerScore = 0;
+const totalCorrectScore = document.querySelector("#total-correct");
+const totalQuestionsScore = document.querySelector("#total-questions");
+
 let correctAnswers = 0;
-let incorrectAnswers = 0;
+let totalQuestions = 0;
 
 const baseSearchParam =
   "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13";
@@ -57,6 +59,29 @@ function goSearch(searchTerm) {
 //this is the object that will store our game options
 //first the objectID is filled from picking three random numbers from our search-set
 //then the artist value should be filled in by a second fetch call to each of the relevant objects
+const gameOptions = {
+  option1: {
+    objectID: 01,
+    artist: "a",
+    image: "url",
+    title: "1",
+    year: "1",
+  },
+  option2: {
+    objectID: 02,
+    artist: "b",
+    image: "url",
+    title: "1",
+    year: "1",
+  },
+  option3: {
+    objectID: 03,
+    artist: "c",
+    image: "url",
+    title: "1",
+    year: "1",
+  },
+};
 
 
 function searchResults(data) {
@@ -65,7 +90,6 @@ function searchResults(data) {
     // debugger
     gameOptions[option].objectID = data.objectIDs[randomNum(1, 500)];
     let objectToFind = gameOptions[option].objectID;
-    
     //use our three objectIDs to then search for each object and gather data
     fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectToFind}`
@@ -80,7 +104,6 @@ function searchResults(data) {
         gameOptions[option].image = data.primaryImageSmall;
         gameOptions[option].title = data.title;
         gameOptions[option].year = data.objectEndDate;
-        console.log(gameOptions[option])
       });
   }
 }
@@ -97,42 +120,43 @@ function reverseLookUp(objectIdToLookUp) {
 }
 
 
-let answerKey = {};
-const mockPieces = {
-  option1: {
-    objectID: 12345,
-    artist: "Tulip Painter",
-    title: "A painting of tulips",
-    year: 1964,
-    image: "https://dummyimage.com/600x400/000/fff&text=A+painting+of+tulips",
-  },
-  option2: {
-    objectID: 6789,
-    artist: "Ocean Master",
-    year: 1924,
-    title: "The beautiful ocean mists warm my fate with baseballs",
-    image:
-      "https://dummyimage.com/600x400/000/0011ff&text=A+painting+of+the+ocean",
-  },
-  option3: {
-    objectID: 101112,
-    artist: "Humanist Painter",
-    year: 1789,
-    title: "A painting of the fall of man",
-    image:
-      "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy",
-  },
-  correct: {
-    objectID: "66666",
-    artist: "Correct Answer Painter",
-    year: 9999,
-    title: "A painting of the correct answer",
-    image:
-      "https://previews.123rf.com/images/dirkercken/dirkercken1312/dirkercken131200024/24419932-correct-answer-right-choice.jpg",
-  },
-};
+// let answerKey = {}; 
+// const mockPieces = {
+//   option1: {
+//     objectID: 12345,
+//     artist: "Tulip Painter",
+//     title: "A painting of tulips",
+//     year: 1964,
+//     image: "https://dummyimage.com/600x400/000/fff&text=A+painting+of+tulips",
+//   },
+//   option2: {
+//     objectID: 6789,
+//     artist: "Ocean Master",
+//     year: 1924,
+//     title: "The beautiful ocean mists warm my fate with baseballs",
+//     image:
+//       "https://dummyimage.com/600x400/000/0011ff&text=A+painting+of+the+ocean",
+//   },
+//   option3: {
+//     objectID: 101112,
+//     artist: "Humanist Painter",
+//     year: 1789,
+//     title: "A painting of the fall of man",
+//     image:
+//       "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy",
+//   },
+//   correct: {
+//     objectID: "66666",
+//     artist: "Correct Answer Painter",
+//     year: 9999,
+//     title: "A painting of the correct answer",
+//     image:
+//       "https://previews.123rf.com/images/dirkercken/dirkercken1312/dirkercken131200024/24419932-correct-answer-right-choice.jpg",
+//   },
+// };
 
 function initialLoad() {
+  goSearch();
   // pick a random dom element to make the correct answer
   let correctAnswerElement = `option${randomNum(1, 4)}`;
   //create a variable to store the correct answer object
@@ -140,24 +164,26 @@ function initialLoad() {
 
   goSearch();
   //set the id of each of the board pieces to match the input objectid
-  option1.setAttribute("data-id", mockPieces.option1.objectID);
-  option2.setAttribute("data-id", mockPieces.option2.objectID);
-  option3.setAttribute("data-id", mockPieces.option3.objectID);
-  mainImage.setAttribute("data-id", mockPieces.correct.objectID);
+  option1.setAttribute("data-id", gameOptions.option1.objectID);
+  option2.setAttribute("data-id", gameOptions.option2.objectID);
+  option3.setAttribute("data-id", gameOptions.option3.objectID);
+  mainImage.setAttribute("data-id", gameOptions.correct.objectID);
 
-  mainImage.src = mockPieces.correct.image;
-  option1.textContent = mockPieces.option1.artist;
-  option2.textContent = mockPieces.option2.artist;
-  option3.textContent = mockPieces.option3.artist;
+  mainImage.src = gameOptions.correct.image;
+  option1.textContent = gameOptions.option1.artist;
+  option2.textContent = gameOptions.option2.artist;
+  option3.textContent = gameOptions.option3.artist;
 }
+initialLoad()
 
 initialLoad();
 
 function randomizeWinnerOptions() {
   const randNum = Math.floor(Math.random() * (4 - 1) + 1);
-  for (let option in mockPieces) {
+  console.log(randNum);
+  for (let option in gameOptions) {
     if (option === `option${randNum}`) {
-      mockPieces["correct"] = mockPieces[option];
+      gameOptions["correct"] = gameOptions[option];
     }
   }
 }
@@ -170,11 +196,11 @@ function correctAnnouncment() {
   const modalObjectYear = document.getElementById("modal-object-year");
   const modalObjectImage = document.getElementById("modal-object-image");
   //replace elements with our correct answer
-  modalObjectTitle.textContent = mockPieces.correct.title;
-  modalObjectArtist.textContent = mockPieces.correct.artist;
-  modalObjectArtistInsert.textContent = mockPieces.correct.artist;
-  modalObjectYear.textContent = mockPieces.correct.year;
-  modalObjectImage.src = mockPieces.correct.image;
+  modalObjectTitle.textContent = gameOptions.correct.title;
+  modalObjectArtist.textContent = gameOptions.correct.artist;
+  modalObjectArtistInsert.textContent = gameOptions.correct.artist;
+  modalObjectYear.textContent = gameOptions.correct.year;
+  modalObjectImage.src = gameOptions.correct.image;
 }
 
 // winner logic- add to event listeners on option buttons
@@ -182,19 +208,20 @@ function winLogic() {
   //see if data-id matches mainImage.dat-id
 
   if (this.getAttribute("data-id") === mainImage.getAttribute("data-id")) {
-    console.log("this: ", this);
-    console.log(this.getAttribute("data-id"));
-    console.log(mainImage.getAttribute("data-id"));
+    alert("correct! you know your artists!!!");
     console.log("correct!");
-    playerScore++;
     correctAnswers++;
+    totalQuestions++;
+    totalCorrectScore.textContent = correctAnswers;
+    totalQuestionsScore.textContent = totalQuestions;
+    // openModalWindow()
     // reset();
   } else {
-    console.log("this: ", this);
-    console.log(this.getAttribute("data-id"));
-    console.log(mainImage.getAttribute("data-id"));
+    alert("Incorrect! Better luck next round!");
     console.log("wrong!");
-    incorrectAnswers++;
+    totalQuestions++;
+    totalQuestionsScore.textContent = totalQuestions;
+    // openModalWindow()
     // reset();
   }
 }
