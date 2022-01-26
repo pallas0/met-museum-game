@@ -9,16 +9,16 @@
 	<body>
     
         <div class="row">
-            <div id="redheader"></div>
+            <div id="redheader" class="metred"></div>
             <header class="row">
-                <div class="row containergi">
+                <div class="row container">
                     <h1 id="title">Welcome to Met Guess</h1>
                 </div>
                 <div class="col-md-3" id="col1-placeholder"></div>
                 <p id="about-the-game" class="col-md-6">Learn about the artists in the Met Museum Collection by correctly choosing the artist who created the work displayed below</p>
                 <div class="col-md-3" id="col3-placeholder"></div>
             </header>
-            <div class="col-md-3"></div>
+            <div class="col-md-3"></div><!--empty 1/3rd width column-->
 
             <div id="card" class="col-md-6">
                 <img src="https://plchldr.co/i/500x500?&bg=220022&fc=ffffff" id="main-image"> 
@@ -41,29 +41,88 @@
                     <span class="" id="scorekeeper">Score: XX / YY</span>
                     <span class="" id="timeleft">Time Left: XX:XX</span>
                 </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#welcome-popup">
+                    Launch welcome modal
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correct-popup">
+                    Launch correct answer modal
+                </button>
             </div><!--end of card-->
             
-            <div class="col-md-3"></div> <!--empty thirds grid?-->
+            <div class="col-md-3"> </div> <!--empty thirds grid?-->
         
         </div>
-        <!--
-        <div id="modalPopup">
-            <div id="modalCard" class="container">
-                <row>
-                    <column>
-                        <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-image"> 
-                    </column>
-                    <column>
-                        <p class="object-title"></p>
-                        <p class="object-artist"></p>
-                        <p class="object-year-created"></p>
-                    </column>
-                </row>
 
+        <!-- below this gate lies popup-central -->
+<!--welcome pop-up start-->        
+<div class="modal fade" id="welcome-popup">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="winnerGreeting">Welcome to Met Guess!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!--modal header-->
+            <div class="modal-body">
+                <div class="container-fluid col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Thanks for visiting! Want to test your knowledge of the artists found in the Met Collection?  You're in the right place!</p>
+                            <img src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div><!--modal body-->
+            <div class="modal-footer centered">
+                <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">Next Question ></button>
+                <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
             </div>
-        </div>-->
+        </div>
+    </div>
+</div>
+<!--welcome answer pop-up end-->      
+<!--correct answer pop-up-->        
+<div class="modal fade" id="correct-popup">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="winnerGreeting">Congratulations!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!--modal header-->
+            <div class="modal-body">
+                <div class="container-fluid col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-object-image"> 
+                        </div>
+                        <div id="correctModalObjectDetails" class="col-md-6">
+                            <p>You were right!  That one was by <span id="artist-insert"></span>!  Here is a little more information:</p>
+                            <h6>Title:</h6>
+                            <p id="modal-object-title">PLACEHOLDER TITLE</p>
+                            <h6>Artist Name:</h6>
+                            <p id="modal-object-artist">PLACEHOLDER NAME</p>
+                            <h6>Year:</h6>
+                            <p id="modal-object-year">PLACEHOLDER YEAR</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--modal body-->
+            <div class="modal-footer centered">
+                <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">Next Question ></button>
+                <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--correct answer pop-up--> 
+
+        <!-- linking to our current game.js -->
         <script src="game.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+        <!-- linking to the bootstrap bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	
     </body>
 </html>

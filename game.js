@@ -78,22 +78,30 @@ const mockPieces = {
     "option1": {
         "objectID": 12345, 
         "artist": "Tulip Painter",
+        "title": "A painting of tulips",
+        "year": 1964,
         "image": "https://dummyimage.com/600x400/000/fff&text=A+painting+of+tulips"
       },
       "option2": {
           "objectID": 6789, 
           "artist": "Ocean Master",
+          "year": 1924,
+          "title": "The beautiful ocean mists warm my fate with baseballs",
           "image": "https://dummyimage.com/600x400/000/0011ff&text=A+painting+of+the+ocean"
       },
       "option3": {
           "objectID": 101112, 
           "artist": "Humanist Painter",
+          "year": 1789,
+          "title": "A painting of the fall of man",
           "image": "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy"
       },
       "correct": {
-        "objectID": "",
-        "artist": "",
-        "image": "url"
+        "objectID": "66666",
+        "artist": "Correct Answer Painter",
+        "year": 9999,
+        "title": "A painting of the correct answer",
+        "image": "https://previews.123rf.com/images/dirkercken/dirkercken1312/dirkercken131200024/24419932-correct-answer-right-choice.jpg"
       }
 }
 
@@ -103,12 +111,13 @@ function initialLoad() {
     //create a variable to store the correct answer object
     const correctAnswerObj = mockPieces.correct
     //set the id of each of the board pieces to match the input objectid
-    option1.id = mockPieces.option1.objectID
-    option2.id = mockPieces.option2.objectID
-    option3.id = mockPieces.option3.objectID
+    option1.setAttribute("data-id", mockPieces.option1.objectID)
+    option1.setAttribute("data-id", mockPieces.option2.objectID)
+    option1.setAttribute("data-id", mockPieces.option2.objectID)
+
     //populate the main image and store the object id as the winner
     //winningChoice = option[randomNum()]
-    debugger
+    //debugger
     
     // new! added a correct field to the dataset - its randomly filled on page load with the props of one of the three options
     // this then gives us a "source of truth" for all the comparisons we'd need to do.
@@ -125,11 +134,9 @@ function initialLoad() {
 }
 
 function chooseCorrect(){
-    // correctAnswerObj.objectID = 
-    // Object.assign(answeKey, )
-
     //let randomPick = 'option + randomNum(1,4)
-    console.log(Object.keys(mockPieces.randomPick));
+    randomNum = Math.floor(Math.random() * (4 - 1) + 4)
+    //console.log(Object.keys(mockPieces.option`{$randomNum}`));
     answerKey = {
         "correct": {
             "objectID": "",
@@ -140,4 +147,20 @@ function chooseCorrect(){
           
     }
     
+}
+
+function correctAnnouncment() {
+    //select our modal dom elements
+    const modalObjectTitle = document.getElementById('modal-object-title')
+    const modalObjectArtist = document.getElementById('modal-object-artist')
+    const modalObjectArtistInsert = document.getElementById('artist-insert')
+    const modalObjectYear = document.getElementById('modal-object-year')
+    const modalObjectImage = document.getElementById('modal-object-image')
+    //replace elements with our correct answer
+    modalObjectTitle.textContent = mockPieces.correct.title
+    modalObjectArtist.textContent = mockPieces.correct.artist
+    modalObjectArtistInsert.textContent = mockPieces.correct.artist
+    modalObjectYear.textContent = mockPieces.correct.year
+    modalObjectImage.src = mockPieces.correct.image
+
 }
