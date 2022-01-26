@@ -112,11 +112,13 @@ function initialLoad() {
     //create a variable to store the correct answer object
     const correctAnswerObj = mockPieces.correct
     //set the id of each of the board pieces to match the input objectid
-    option1.setAttribute("data-id", mockPieces.option1.objectID)
-    option2.setAttribute("data-id", mockPieces.option2.objectID)
-    option3.setAttribute("data-id", mockPieces.option3.objectID)
+    option1.setAttribute("data-id", gameOptions.option1.objectID)
+    option2.setAttribute("data-id", gameOptions.option2.objectID)
+    option3.setAttribute("data-id", gameOptions.option3.objectID)
     
     console.log(option1)
+    console.log(gameOptions)
+
 
     //populate the main image and store the object id as the winner
     //winningChoice = option[randomNum()]
