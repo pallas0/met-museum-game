@@ -43,7 +43,23 @@ li.scoreboard {
 #score-skip {
     margin: auto;
 }
+.metred,
+a.btn.metred {
+    background: #e03;
+    border-color: #e45;
+}
+
 #redheader {
-    height: 50px;
-    background: #e03
+    height: 70px;
+    background: #e03;
+    z-index:3000;
+}
+
+/* modal windows */
+#modal-object-image {
+    width: 30vh;
+}
+
+#correctModalObjectDetails * {
+    text-align: left;
 }
