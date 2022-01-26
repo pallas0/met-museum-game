@@ -48,7 +48,7 @@ function goSearch(searchTerm) {
           title: "title",
           year: 0000,
           image: "url",
-        }
+        },
     }
     
 
@@ -134,23 +134,23 @@ function initialLoad() {
   //create a variable to store the correct answer object
   randomizeWinnerOptions();
   //set the id of each of the board pieces to match the input objectid
-  option1.setAttribute("data-id", mockPieces.option1.objectID);
-  option2.setAttribute("data-id", mockPieces.option2.objectID);
-  option3.setAttribute("data-id", mockPieces.option3.objectID);
-  mainImage.setAttribute("data-id", mockPieces.correct.objectID);
+  option1.setAttribute("data-id", gameOptions.option1.objectID);
+  option2.setAttribute("data-id", gameOptions.option2.objectID);
+  option3.setAttribute("data-id", gameOptions.option3.objectID);
+  mainImage.setAttribute("data-id", gameOptions.correct.objectID);
 
-  mainImage.src = mockPieces.correct.image;
-  option1.textContent = mockPieces.option1.artist;
-  option2.textContent = mockPieces.option2.artist;
-  option3.textContent = mockPieces.option3.artist;
+  mainImage.src = gameOptions.correct.image;
+  option1.textContent = gameOptions.option1.artist;
+  option2.textContent = gameOptions.option2.artist;
+  option3.textContent = gameOptions.option3.artist;
 }
 initialLoad()
 
 function randomizeWinnerOptions() {
   const randNum = Math.floor(Math.random() * (4 - 1) + 1);
-  for (let option in mockPieces) {
+  for (let option in gameOptions) {
     if (option === `option${randNum}`) {
-      mockPieces["correct"] = mockPieces[option];
+      gameOptions["correct"] = gameOptions[option];
     }
   }
 }
