@@ -37,6 +37,7 @@ function goSearch(searchTerm) {
     
 function searchResults(data) {
     //this fills in our game pieces with randomly chosen objects
+    let isEmpty = false;
     for (let option in gameOptions) {
                 gameOptions[option].objectID = data.objectIDs[randomNum()]
                 let objectToFind = gameOptions[option].objectID
@@ -45,6 +46,8 @@ function searchResults(data) {
                 .then((resp) => resp.json())
                 .then((data) => {
                     gameOptions[option].artist = data.artistDisplayName
+
+                    console.log(gameOptions[option].artist)
                 })
     }
 }
