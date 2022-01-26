@@ -1,18 +1,18 @@
-const mainImage = document.querySelector("#main-image");
-const option1 = document.querySelector("#objectID-1");
-const option2 = document.querySelector("#objectID-2");
-const option3 = document.querySelector("#objectID-3");
+const mainImage = document.getElementById("main-image");
+const option1 = document.getElementById("objectID-1");
+const option2 = document.getElementById("objectID-2");
+const option3 = document.getElementById("objectID-3");
 
-const scoreEl = document.querySelector("#scorekeeper");
-const timeLeftEl = document.querySelector("#timeleft");
-
-
+const scoreEl = document.getElementById("scorekeeper");
+const timeLeftEl = document.getElementById("timeleft");
+const welcomePopupEl = document.getElementById("modal-holder")
 
 const newGameButton = document.querySelector('.new-game-button')
-// newGameButton.addEventListener("click", function(e) {
-//     e.preventDefault()
-//     window.location.reload()
-// })
+newGameButton.addEventListener("click", function(e) {
+    //e.preventDefault()
+    console.log("clickity click")
+    window.location.reload()
+})
 
 const baseSearchParam = "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13"
 
@@ -139,6 +139,16 @@ function correctAnnouncment() {
 
 }
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+        welcomeScreen()
+    // welcomePopupEl.toggle()
+   
+});
 function welcomeScreen() {
-    $('#welcome-popup').modal('show')
+    var myModal = new bootstrap.Modal(document.getElementById('welcome-popup'), {
+        keyboard: false
+      })
+      myModal.show();
 }
+

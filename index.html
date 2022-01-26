@@ -48,9 +48,9 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#welcome-popup">
                     Launch welcome modal
                 </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correct-popup">
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correct-popup">
                     Launch correct answer modal
-                </button>
+                </button> -->
             </div><!--end of card-->
             
             <div class="col-md-3"> </div> <!--empty thirds grid?-->
@@ -58,7 +58,8 @@
         </div>
 
         <!-- below this gate lies popup-central -->
-<!--welcome pop-up start-->        
+<!--welcome pop-up start-->  
+    
 <div class="modal fade" id="welcome-popup">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -73,18 +74,19 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p>Thanks for visiting! Want to test your knowledge of the artists found in the Met Collection?  You're in the right place!</p>
-                            <img src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" alt="">
+                            <img id="welcome-image" src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div><!--modal body-->
             <div class="modal-footer centered">
-                <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">Next Question ></button>
+                <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="start-game-button">Start the Game!</button>
                 <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
             </div>
         </div>
     </div>
 </div>
+
 <!--welcome answer pop-up end-->      
 <!--correct answer pop-up-->        
 <div class="modal fade" id="correct-popup">
@@ -115,9 +117,6 @@
                 </div>
             </div><!--modal body-->
             <div class="modal-footer centered">
-                <button role="button" type="button" class="btn btn-primary btn-lg new-game-button" data-bs-toggle="modal">
-                    New Game!
-                </button>
                 <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">Next Question ></button>
                 <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
             </div>
