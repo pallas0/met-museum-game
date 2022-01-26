@@ -1,4 +1,5 @@
 const mainImage = document.querySelector("#main-image");
+const gamePieces = document.querySelector("#game-pieces");
 const option1 = document.querySelector("#objectID-1");
 const option2 = document.querySelector("#objectID-2");
 const option3 = document.querySelector("#objectID-3");
@@ -25,14 +26,17 @@ const gameOptions = {
   option1: {
     objectID: 01,
     artist: "a",
+    src: `https://ukmadcat.com/wp-content/uploads/2019/04/sleepy-cat.jpg`,
   },
   option2: {
     objectID: 02,
     artist: "b",
+    src: `http://www.trbimg.com/img-5a68a878/turbine/ct-grumpy-cat-lawsuit-20180124`,
   },
   option3: {
     objectID: 03,
     artist: "c",
+    src: `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F09%2F25%2F597795-licking-cat-animals.jpg&f=1&nofb=1`,
   },
 };
 
@@ -77,3 +81,26 @@ function randomizeOptions() {
   console.log(gameOptions);
 }
 randomizeOptions();
+
+function populateGameOptions() {
+  // populate image with winner object
+  mainImage.src = gameOptions.winner.src;
+
+  console.log(gameOptions.winner.objectID);
+  // ***mainIage.className should be equal to object ID***
+  mainImage.className = `${gameOptions.winner.objectID}`;
+  mainImage.style.width = "400px";
+
+  // populate gamePiece options
+  option1.textContent = gameOptions.option1.artist;
+  option1.classList.add(gameOptions.option1.objectID);
+  option2.textContent = gameOptions.option2.artist;
+  option2.classList.add(gameOptions.option2.objectID);
+  option3.textContent = gameOptions.option3.artist;
+  option3.classList.add(gameOptions.option3.objectID);
+
+  // loop over gameOptions
+
+  // if answer is correct, display modal, increase score counter, and repopulate game with new question
+}
+populateGameOptions();
