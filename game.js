@@ -29,19 +29,25 @@ function goSearch(searchTerm) {
   //then the artist value should be filled in by a second fetch call to each of the relevant objects
   const gameOptions = {
       "option1": {
-          "objectID": 01, 
-          "artist": "a",
-          "image": "url"
-        },
+        objectID: 01,
+        artist: "a",
+        title: "title",
+        year: 0000,
+        image: "url",
+      },
         "option2": {
-            "objectID": 02, 
-            "artist": "b",
-            "image": "url"
+          objectID: 02,
+          artist: "b",
+          title: "title",
+          year: 0000,
+          image: "url",
         },
         "option3": {
-            "objectID": 03, 
-            "artist": "c",
-            "image": "url"
+          objectID: 03,
+          artist: "c",
+          title: "title",
+          year: 0000,
+          image: "url",
         }
     }
     
@@ -52,13 +58,11 @@ function goSearch(searchTerm) {
 
 
 function searchResults(data) {
-  console.log(data);
   //this fills in our game pieces with randomly chosen objects
   for (let option in gameOptions) {
     // debugger
     gameOptions[option].objectID = data.objectIDs[randomNum(1, 500)];
     let objectToFind = gameOptions[option].objectID;
-    console.log(objectToFind);
     //use our three objectIDs to then search for each object and gather data
     fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectToFind}`
@@ -137,19 +141,14 @@ function initialLoad() {
   option3.textContent = mockPieces.option3.artist;
 }
 initialLoad()
-console.log(option1)
-console.log(option2)
-console.log(gameOptions.option1)
 
 function randomizeWinnerOptions() {
   const randNum = Math.floor(Math.random() * (4 - 1) + 1);
-  console.log(randNum);
   for (let option in mockPieces) {
     if (option === `option${randNum}`) {
       mockPieces["correct"] = mockPieces[option];
     }
   }
-  console.log(mockPieces);
 }
 
 function correctAnnouncment() {
