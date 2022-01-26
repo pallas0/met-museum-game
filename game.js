@@ -89,40 +89,40 @@ function reverseLookUp(objectIdToLookUp) {
 //console.log(gameOptions)
 goSearch();
 
-let answerKey = {};
-const mockPieces = {
-  option1: {
-    objectID: 12345,
-    artist: "Tulip Painter",
-    title: "A painting of tulips",
-    year: 1964,
-    image: "https://dummyimage.com/600x400/000/fff&text=A+painting+of+tulips",
-  },
-  option2: {
-    objectID: 6789,
-    artist: "Ocean Master",
-    year: 1924,
-    title: "The beautiful ocean mists warm my fate with baseballs",
-    image:
-      "https://dummyimage.com/600x400/000/0011ff&text=A+painting+of+the+ocean",
-  },
-  option3: {
-    objectID: 101112,
-    artist: "Humanist Painter",
-    year: 1789,
-    title: "A painting of the fall of man",
-    image:
-      "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy",
-  },
-  correct: {
-    objectID: "66666",
-    artist: "Correct Answer Painter",
-    year: 9999,
-    title: "A painting of the correct answer",
-    image:
-      "https://previews.123rf.com/images/dirkercken/dirkercken1312/dirkercken131200024/24419932-correct-answer-right-choice.jpg",
-  },
-};
+// let answerKey = {};
+// const mockPieces = {
+//   option1: {
+//     objectID: 12345,
+//     artist: "Tulip Painter",
+//     title: "A painting of tulips",
+//     year: 1964,
+//     image: "https://dummyimage.com/600x400/000/fff&text=A+painting+of+tulips",
+//   },
+//   option2: {
+//     objectID: 6789,
+//     artist: "Ocean Master",
+//     year: 1924,
+//     title: "The beautiful ocean mists warm my fate with baseballs",
+//     image:
+//       "https://dummyimage.com/600x400/000/0011ff&text=A+painting+of+the+ocean",
+//   },
+//   option3: {
+//     objectID: 101112,
+//     artist: "Humanist Painter",
+//     year: 1789,
+//     title: "A painting of the fall of man",
+//     image:
+//       "https://dummyimage.com/600x400/000/ff00fb&text=The+fall+of+man+as+illustrated+by+a+dead+white+guy",
+//   },
+//   correct: {
+//     objectID: "66666",
+//     artist: "Correct Answer Painter",
+//     year: 9999,
+//     title: "A painting of the correct answer",
+//     image:
+//       "https://previews.123rf.com/images/dirkercken/dirkercken1312/dirkercken131200024/24419932-correct-answer-right-choice.jpg",
+//   },
+// };
 
 function initialLoad() {
   // pick a random dom element to make the correct answer
