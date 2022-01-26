@@ -21,38 +21,48 @@ function randomNum(min, max) {
 function goSearch(searchTerm) {
   fetch(baseSearchParam)
     .then((res) => res.json())
-    .then((data) => searchResults(data));
-}
+    .then((data) => searchResults(data))
+  }
+
+  //this is the object that will store our game options
+  //first the objectID is filled from picking three random numbers from our search-set
+  //then the artist value should be filled in by a second fetch call to each of the relevant objects
+  const gameOptions = {
+      "option1": {
+        objectID: 01,
+        artist: "a",
+        title: "title",
+        year: 0000,
+        image: "url",
+      },
+        "option2": {
+          objectID: 02,
+          artist: "b",
+          title: "title",
+          year: 0000,
+          image: "url",
+        },
+        "option3": {
+          objectID: 03,
+          artist: "c",
+          title: "title",
+          year: 0000,
+          image: "url",
+        },
+    }
+    
 
 //this is the object that will store our game options
 //first the objectID is filled from picking three random numbers from our search-set
 //then the artist value should be filled in by a second fetch call to each of the relevant objects
-const gameOptions = {
-  option1: {
-    objectID: 01,
-    artist: "a",
-    image: "url",
-  },
-  option2: {
-    objectID: 02,
-    artist: "b",
-    image: "url",
-  },
-  option3: {
-    objectID: 03,
-    artist: "c",
-    image: "url",
-  },
-};
+
 
 function searchResults(data) {
-  console.log(data);
   //this fills in our game pieces with randomly chosen objects
   for (let option in gameOptions) {
     // debugger
     gameOptions[option].objectID = data.objectIDs[randomNum(1, 500)];
     let objectToFind = gameOptions[option].objectID;
-    console.log(objectToFind);
     //use our three objectIDs to then search for each object and gather data
     fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectToFind}`
@@ -65,6 +75,9 @@ function searchResults(data) {
         // -->possible issue here is what if there is no displayName attribute for the object in the api?
         gameOptions[option].artist = data.artistDisplayName;
         gameOptions[option].image = data.primaryImageSmall;
+        gameOptions[option].title = data.title;
+        gameOptions[option].year = data.objectEndDate;
+
       });
   }
 }
@@ -75,11 +88,9 @@ function reverseLookUp(objectIdToLookUp) {
   )
     .then((res) => res.json())
     .then(function (data) {
-      console.log(data);
-    });
+    })
 }
-//console.log(gameOptions)
-goSearch();
+
 
 let answerKey = {};
 const mockPieces = {
@@ -117,31 +128,31 @@ const mockPieces = {
 };
 
 function initialLoad() {
+  goSearch();
   // pick a random dom element to make the correct answer
   let correctAnswerElement = `option${randomNum(1, 4)}`;
   //create a variable to store the correct answer object
   randomizeWinnerOptions();
   //set the id of each of the board pieces to match the input objectid
-  option1.setAttribute("data-id", mockPieces.option1.objectID);
-  option2.setAttribute("data-id", mockPieces.option2.objectID);
-  option3.setAttribute("data-id", mockPieces.option3.objectID);
-  mainImage.setAttribute("data-id", mockPieces.correct.objectID);
+  option1.setAttribute("data-id", gameOptions.option1.objectID);
+  option2.setAttribute("data-id", gameOptions.option2.objectID);
+  option3.setAttribute("data-id", gameOptions.option3.objectID);
+  mainImage.setAttribute("data-id", gameOptions.correct.objectID);
 
-  mainImage.src = mockPieces.correct.image;
-  option1.textContent = mockPieces.option1.artist;
-  option2.textContent = mockPieces.option2.artist;
-  option3.textContent = mockPieces.option3.artist;
+  mainImage.src = gameOptions.correct.image;
+  option1.textContent = gameOptions.option1.artist;
+  option2.textContent = gameOptions.option2.artist;
+  option3.textContent = gameOptions.option3.artist;
 }
+initialLoad()
 
 function randomizeWinnerOptions() {
   const randNum = Math.floor(Math.random() * (4 - 1) + 1);
-  console.log(randNum);
-  for (let option in mockPieces) {
+  for (let option in gameOptions) {
     if (option === `option${randNum}`) {
-      mockPieces["correct"] = mockPieces[option];
+      gameOptions["correct"] = gameOptions[option];
     }
   }
-  console.log(mockPieces);
 }
 
 function correctAnnouncment() {
