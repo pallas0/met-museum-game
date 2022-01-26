@@ -3,8 +3,16 @@ const option1 = document.querySelector("#objectID-1");
 const option2 = document.querySelector("#objectID-2");
 const option3 = document.querySelector("#objectID-3");
 
-const score = document.querySelector("#scorekeeper");
-const timeLeft = document.querySelector("#timeleft");
+const scoreEl = document.querySelector("#scorekeeper");
+const timeLeftEl = document.querySelector("#timeleft");
+
+
+
+const newGameButton = document.querySelector('.new-game-button')
+// newGameButton.addEventListener("click", function(e) {
+//     e.preventDefault()
+//     window.location.reload()
+// })
 
 const baseSearchParam = "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13"
 
@@ -71,9 +79,8 @@ function reverseLookUp(objectIdToLookUp){
     })
 }
 //console.log(gameOptions)
-goSearch()
+//goSearch()
 
-let answerKey = {}
 const mockPieces = {
     "option1": {
         "objectID": 12345, 
@@ -106,47 +113,12 @@ const mockPieces = {
 }
 
 function initialLoad() {
-    // pick a random dom element to make the correct answer
-    let correctAnswerElement = `option${randomNum(1,4)}`
     //create a variable to store the correct answer object
-    const correctAnswerObj = mockPieces.correct
     //set the id of each of the board pieces to match the input objectid
     option1.setAttribute("data-id", mockPieces.option1.objectID)
     option1.setAttribute("data-id", mockPieces.option2.objectID)
     option1.setAttribute("data-id", mockPieces.option2.objectID)
 
-    //populate the main image and store the object id as the winner
-    //winningChoice = option[randomNum()]
-    //debugger
-    
-    // new! added a correct field to the dataset - its randomly filled on page load with the props of one of the three options
-    // this then gives us a "source of truth" for all the comparisons we'd need to do.
-
-
-
-    option1.addEventListener('click', function(event){
-        checkAnswer(event.target)
-    })
-    chooseCorrect()
-    
-    //we need to popupate the main image
-    //mainImage.id = mockPieces.option[correctAnswer]
-}
-
-function chooseCorrect(){
-    //let randomPick = 'option + randomNum(1,4)
-    randomNum = Math.floor(Math.random() * (4 - 1) + 4)
-    //console.log(Object.keys(mockPieces.option`{$randomNum}`));
-    answerKey = {
-        "correct": {
-            "objectID": "",
-            "artist": "",  
-            "image": "url"
-          }
-
-          
-    }
-    
 }
 
 function correctAnnouncment() {
@@ -163,4 +135,10 @@ function correctAnnouncment() {
     modalObjectYear.textContent = mockPieces.correct.year
     modalObjectImage.src = mockPieces.correct.image
 
+    // 
+
+}
+
+function welcomeScreen() {
+    $('#welcome-popup').modal('show')
 }
