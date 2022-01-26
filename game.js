@@ -41,13 +41,16 @@ function goSearch(searchTerm) {
     }
     
 function searchResults(data) {
-    console.log(data)
     //this fills in our game pieces with randomly chosen objects
+    function randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+      }
+
     for (let option in gameOptions) {
         // debugger
         gameOptions[option].objectID = data.objectIDs[randomNum(1,500)]
         let objectToFind = gameOptions[option].objectID
-        console.log(objectToFind)
+
             //use our three objectIDs to then search for each object and gather data
         fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectToFind}`)
             .then((resp) => resp.json())
@@ -67,10 +70,8 @@ function reverseLookUp(objectIdToLookUp){
     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectIdToLookUp}`)
     .then((res) => res.json())
     .then(function (data) {
-        console.log(data)
     })
 }
-//console.log(gameOptions)
 goSearch()
 
 let answerKey = {}
@@ -112,8 +113,10 @@ function initialLoad() {
     const correctAnswerObj = mockPieces.correct
     //set the id of each of the board pieces to match the input objectid
     option1.setAttribute("data-id", mockPieces.option1.objectID)
-    option1.setAttribute("data-id", mockPieces.option2.objectID)
-    option1.setAttribute("data-id", mockPieces.option2.objectID)
+    option2.setAttribute("data-id", mockPieces.option2.objectID)
+    option3.setAttribute("data-id", mockPieces.option3.objectID)
+    
+    console.log(option1)
 
     //populate the main image and store the object id as the winner
     //winningChoice = option[randomNum()]
@@ -132,6 +135,8 @@ function initialLoad() {
     //we need to popupate the main image
     //mainImage.id = mockPieces.option[correctAnswer]
 }
+
+initialLoad()
 
 function chooseCorrect(){
     //let randomPick = 'option + randomNum(1,4)
