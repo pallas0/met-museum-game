@@ -88,16 +88,16 @@ function populateGameOptions() {
 
   console.log(gameOptions.winner.objectID);
   // ***mainIage.className should be equal to object ID***
-  mainImage.className = `${gameOptions.winner.objectID}`;
+  mainImage.setAttribute("data-id", gameOptions.winner.objectID);
   mainImage.style.width = "400px";
 
   // populate gamePiece options
   option1.textContent = gameOptions.option1.artist;
-  option1.classList.add(gameOptions.option1.objectID);
+  option1.setAttribute("data-id", gameOptions.option1.objectID);
   option2.textContent = gameOptions.option2.artist;
-  option2.classList.add(gameOptions.option2.objectID);
+  option2.setAttribute("data-id", gameOptions.option2.objectID);
   option3.textContent = gameOptions.option3.artist;
-  option3.classList.add(gameOptions.option3.objectID);
+  option3.setAttribute("data-id", gameOptions.option3.objectID);
 
   // loop over gameOptions
 
