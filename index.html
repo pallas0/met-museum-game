@@ -28,6 +28,43 @@
       <div class="col-md-3"></div>
       <!--empty 1/3rd width column-->
 
+
+            <div id="card" class="col-md-6">
+                <img src="https://plchldr.co/i/500x500?&bg=220022&fc=ffffff" id="main-image"> 
+                <div id="gamepiece-holder" class="">
+                        <ul id="game-pieces" class="">
+                            <li class="game-option" id="objectID-1">Option 1</li>
+                            <li class="game-option" id="objectID-2">Option 2</li>
+                            <li class="game-option" id="objectID-3">Option 3</li>   
+                        </ul><!--end of game choices-->
+                </div>
+                <div id="score-skip" class="">
+                    <ul id="score">
+                        <li class="scoreboard" id="score1" >X</li>
+                        <li class="scoreboard" id="score2" >X</li>
+                        <li class="scoreboard" id="score3" >X</li>
+                    </ul>
+                    <button id="skip" class="">Next >></button>
+                </div>
+                <div id="gamestats" class="">
+                    <span class="" id="scorekeeper">Score: XX / YY</span>
+                    <span class="" id="timeleft">Time Left: XX:XX</span>
+                </div>
+
+                <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal" data-bs-target="#redheader">
+                    New Game!
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#welcome-popup">
+                    Launch welcome modal
+                </button>
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correct-popup">
+                    Launch correct answer modal
+                </button> -->
+            </div><!--end of card-->
+            
+            <div class="col-md-3"> </div> <!--empty thirds grid?-->
+        
+
       <div id="card" class="col-md-6">
         <img
           src="https://plchldr.co/i/500x500?&bg=220022&fc=ffffff"
@@ -40,6 +77,7 @@
             <li class="game-option" id="objectID-3">Option 3</li>
           </ul>
           <!--end of game choices-->
+
         </div>
         <div id="score-skip" class="">
           <ul id="score">
@@ -77,40 +115,32 @@
       <!--empty thirds grid?-->
     </div>
 
-    <!-- below this gate lies popup-central -->
-    <!--welcome pop-up start-->
-    <div class="modal fade" id="welcome-popup">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+        <!-- below this gate lies popup-central -->
+<!--welcome pop-up start-->  
+<div class="modal fade" id="welcome-popup">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="winnerGreeting">
-              Welcome to Met Guess!
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!--modal header-->
-          <div class="modal-body">
-            <div class="container-fluid col-md-12">
-              <div class="row">
-                <div class="col-md-12">
-                  <p>
-                    Thanks for visiting! Want to test your knowledge of the
-                    artists found in the Met Collection? You're in the right
-                    place!
-                  </p>
-                  <img
-                    src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg"
-                    alt=""
-                  />
+            <div class="modal-header">
+                <h5 class="modal-title" id="winnerGreeting">Welcome to Met Guess!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!--modal header-->
+            <div class="modal-body">
+                <div class="container-fluid col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Thanks for visiting! Want to test your knowledge of the artists found in the Met Collection?  You're in the right place!</p>
+                            <img id="welcome-image" src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div><!--modal body-->
+            <div class="modal-footer centered">
+                <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="start-game-button">Start the Game!</button>
+                <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
+
             </div>
           </div>
           <!--modal body-->
@@ -135,10 +165,14 @@
         </div>
       </div>
     </div>
-    <!--welcome answer pop-up end-->
-    <!--correct answer pop-up-->
-    <div class="modal fade" id="correct-popup">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
+</div>
+
+<!--welcome answer pop-up end-->      
+<!--correct answer pop-up-->        
+<div class="modal fade" id="correct-popup">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="winnerGreeting">Congratulations!</h5>

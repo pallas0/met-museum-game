@@ -55,7 +55,16 @@ a.btn.metred {
     z-index:3000;
 }
 
+#start-game-button, 
+div.modal-content .modal-footer .new-game-button {
+    position: absolute;
+    left: 20px;
+}
+
 /* modal windows */
+#welcome-image{
+    width: 40vh;
+}
 #modal-object-image {
     width: 30vh;
 }

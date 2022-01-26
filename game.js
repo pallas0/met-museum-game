@@ -1,10 +1,18 @@
-const mainImage = document.querySelector("#main-image");
-const option1 = document.querySelector("#objectID-1");
-const option2 = document.querySelector("#objectID-2");
-const option3 = document.querySelector("#objectID-3");
+const mainImage = document.getElementById("main-image");
+const option1 = document.getElementById("objectID-1");
+const option2 = document.getElementById("objectID-2");
+const option3 = document.getElementById("objectID-3");
 
-const score = document.querySelector("#scorekeeper");
-const timeLeft = document.querySelector("#timeleft");
+const scoreEl = document.getElementById("scorekeeper");
+const timeLeftEl = document.getElementById("timeleft");
+const welcomePopupEl = document.getElementById("modal-holder")
+
+const newGameButton = document.querySelector('.new-game-button')
+newGameButton.addEventListener("click", function(e) {
+    //e.preventDefault()
+    console.log("clickity click")
+    window.location.reload()
+})
 
 const totalCorrectScore = document.querySelector("#total-correct");
 const totalQuestionsScore = document.querySelector("#total-questions");
@@ -97,7 +105,21 @@ function reverseLookUp(objectIdToLookUp) {
 }
 
 
-// let answerKey = {}; 
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+        welcomeScreen()
+    // welcomePopupEl.toggle()
+   
+});
+function welcomeScreen() {
+    var myModal = new bootstrap.Modal(document.getElementById('welcome-popup'), {
+        keyboard: false
+      })
+      myModal.show();
+}
+
+
+ 
 // const mockPieces = {
 //   option1: {
 //     objectID: 12345,
@@ -210,3 +232,4 @@ const reset = () => {
 option1.addEventListener("click", winLogic);
 option2.addEventListener("click", winLogic);
 option3.addEventListener("click", winLogic);
+
