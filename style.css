@@ -153,10 +153,9 @@ a.btn.metred {
 #welcome-popup {
     background: #666
 }
-#welcome-card {
-    
-}
-
 #correctModalObjectDetails * {
     text-align: left;
+}
+#correct-popup h6 {
+    background: #999
 }
