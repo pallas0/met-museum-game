@@ -43,6 +43,8 @@ li.scoreboard {
 
 #about-the-game {
     max-width: 40vh;
+    position: relative;
+    margin: auto;
 }
 
 #main-image {
