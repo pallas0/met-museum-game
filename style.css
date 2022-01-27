@@ -22,6 +22,9 @@ html * {
     #cheekynote {
         font-size:70%
     }
+    .footerleft{
+        display: none;
+    }
 }
 @media (max-width: 768px){
     #met-header {
@@ -30,6 +33,7 @@ html * {
     span#met-header-short {
         display: inline;
     }
+
 }
 
 @media (max-width: 425px){
@@ -170,8 +174,26 @@ a.btn.metred:hover {
     padding: 18px 0 5px 0;
 }
 
-
-
+footer.footer {
+    size: 2em;
+    background: black;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: .8em
+}
+footer span{
+    padding: 8px
+}
+span.footerleft {
+    float: left;
+}
+span.footerright {
+    float: right;
+}
 
 
 /* modal windows */
