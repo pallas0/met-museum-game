@@ -2,22 +2,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     welcomeScreen()
     init()    
-});
-//document selectors
-const mainImage = document.getElementById("main-image");
-const option1 = document.getElementById("objectID-1");
-const option2 = document.getElementById("objectID-2");
-const option3 = document.getElementById("objectID-3");
-
-const scoreEl = document.getElementById("scorekeeper");
-const timeLeftEl = document.getElementById("timeleft");
-const welcomePopupEl = document.getElementById("modal-holder")
-
-const totalCorrectScore = document.querySelector("#total-correct");
-const totalQuestionsScore = document.querySelector("#total-questions");
-
-const newGameButton = document.querySelector('.new-game-button')
-newGameButton.addEventListener("click", function(e) {
+  });
+  //document selectors
+  const mainImage = document.getElementById("main-image");
+  const option1 = document.getElementById("objectID-1");
+  const option2 = document.getElementById("objectID-2");
+  const option3 = document.getElementById("objectID-3");
+  
+  const scoreEl = document.getElementById("scorekeeper");
+  const timeLeftEl = document.getElementById("timeleft");
+  const welcomePopupEl = document.getElementById("modal-holder")
+  
+  const totalCorrectScore = document.querySelector("#total-correct");
+  const totalQuestionsScore = document.querySelector("#total-questions");
+  
+  const newGameButton = document.querySelector('.new-game-button')
+ //event listeners 
+  option1.addEventListener("click", winLogic);
+  option2.addEventListener("click", winLogic);
+  option3.addEventListener("click", winLogic);
+  newGameButton.addEventListener("click", function(e) {
     //e.preventDefault()
     window.location.reload()
     reset();
@@ -133,7 +137,7 @@ function initialLoad() {
 
 
 
-
+//this function fills in the information for our popup with the correct info
 function correctAnnouncment() {
   //select our modal dom elements
   const modalObjectTitle = document.getElementById("modal-object-title");
@@ -152,7 +156,6 @@ function correctAnnouncment() {
 // winner logic- add to event listeners on option buttons
 function winLogic() {
   //see if data-id matches mainImage.dat-id
-
   if (this.getAttribute("data-id") === mainImage.getAttribute("data-id")) {
     alert("correct! you know your artists!!!");
     console.log("correct!");
@@ -171,15 +174,11 @@ function winLogic() {
     // reset();
   }
 }
-
+//reset the game board (currently just clears, will need to fire goSearch again)
 const reset = () => {
   option1.setAttribute("data-id", "");
   option2.setAttribute("data-id", "");
   option3.setAttribute("data-id", "");
   mainImage.setAttribute("data-id", "");
 };
-
-option1.addEventListener("click", winLogic);
-option2.addEventListener("click", winLogic);
-option3.addEventListener("click", winLogic);
 
