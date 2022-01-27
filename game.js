@@ -104,20 +104,15 @@ const gameOptions = {
 
 //build function that loops over gameOptions to check for blank strings
 function checkMissingStringsInObject() {
+  console.log(gameOptions);
   for (const option in gameOptions) {
-    console.log(gameOptions[option].artist);
     if (gameOptions[option].artist === "") {
-      console.log(gameOptions);
-      console.log(`blank artist artist found! duping ${option} to option4`);
-      gameOptions[option].artist = gameOptions.option4.artist;
-      console.log(gameOptions);
+      gameOptions[option] = gameOptions.option4;
     } else if (gameOptions[option].artist === "Unidentified artist") {
-      console.log(gameOptions);
-      console.log(`Unidentified artist found! duping ${option} to option5`);
-      gameOptions[option].artist = gameOptions.option5.artist;
-      console.log(gameOptions);
+      gameOptions[option] = gameOptions.option5;
     }
   }
+  console.log(gameOptions);
 }
 
 async function searchResults(data) {
