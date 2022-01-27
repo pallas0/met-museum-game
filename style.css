@@ -22,6 +22,9 @@ html * {
     #cheekynote {
         font-size:70%
     }
+    .footerleft{
+        display: none;
+    }
 }
 @media (max-width: 768px){
     #met-header {
@@ -30,6 +33,7 @@ html * {
     span#met-header-short {
         display: inline;
     }
+
 }
 
 @media (max-width: 425px){
@@ -180,6 +184,9 @@ footer.footer {
     bottom: 0;
     color: white;
     font-size: .8em
+}
+footer span{
+    padding: 8px
 }
 span.footerleft {
     float: left;
