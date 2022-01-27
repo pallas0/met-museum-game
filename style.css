@@ -84,15 +84,6 @@ li.scoreboard {
     display: inline-block;
 
 }
-/* #gamepiece-holder {
-    float: none;
-    display: block;
-    position: relative;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-} */
-
 #about-the-game {
     max-width: 40vh;
     position: relative;
@@ -100,7 +91,7 @@ li.scoreboard {
 }
 
 #main-image {
-    max-width: 40vh;
+    max-width: 40wh;
     max-height: 40vh
 
 }
@@ -108,6 +99,14 @@ li.scoreboard {
 #score-skip {
     margin: auto;
 }
+button.new-game-button {
+    background: none;
+    width: 12em;
+    border: black solid 2px;
+    padding: 10px;
+}
+
+
 .metred,
 a.btn.metred {
     background: #e03;
