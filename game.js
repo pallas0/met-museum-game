@@ -24,13 +24,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   option3.addEventListener("click", winLogic);
 
   newGameButton.addEventListener("click", function(e) {
+    reset();
     totalQuestionsScore.textContent = 0
     totalCorrectScore.textContent = 0
-
-    reset();
 })
 
   nextButton.addEventListener("click", function(e) {
+    e.preventDefault();
     reset();
     totalQuestions++
     totalQuestionsScore.textContent = totalQuestions
