@@ -12,50 +12,52 @@
   </head>
   <body>
     <div class="row">
-      <div id="redheader" class="metred"></div>
-    <header class="row">
-        <div class="row container">
-            <h1 id="title">Welcome to Met Guess</h1>
-        </div>
-        <div class="col-md-3" id="col1-placeholder"></div>
-        <p id="about-the-game" class="col-md-6">
-          Learn about the artists in the Met Museum Collection by correctly
-          choosing the artist who created the work displayed below
-        </p>
-    </header>
+        <div id="redheader" class="metred"></div>
+        <header class="">
+            <div class="">
+                <h1 id="title">Welcome to Met Guess</h1>
+            </div>
+            <p id="about-the-game" class="">
+            Learn about the artists in the Met Museum Collection by correctly
+            choosing the artist who created the work displayed below
+            </p>
+        </header>
 
-    <div class="col-md-3"></div><!--empty 1/3rd width column-->
+        <div class="col-md-3"></div><!--empty 1/3rd width column-->
 
-    <div id="card" class="col-md-6">
-        <img src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" style="width: 40vh;" id="main-image"> 
-        <div id="gamepiece-holder" class="">
-                <ul id="game-pieces" class="">
-                    <li class="game-option" id="objectID-1">Option 1</li>
-                    <li class="game-option" id="objectID-2">Option 2</li>
-                    <li class="game-option" id="objectID-3">Option 3</li>   
-                </ul><!--end of game choices-->
-        </div>
-        <div id="score-skip" class="">
-            <button id="skip" class="">Next >></button>
-        </div>
-        <div id="gamestats" class="">
-            Score: <span id="total-correct">00</span> /
-            <span id="total-questions">00</span>
-            <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
-          </div>
+        <div class="col-md-6"><!--container for the card-->
+            <div id="card" class="">
+                <div id="card-image-holder">
+                    <img src="https://images.metmuseum.org/CRDImages/eg/original/DT563.jpg" id="main-image"> 
+                </div><!--end card image holder-->
+                <div id="gamepiece-holder" class="">
+                        <ul id="game-pieces" class="">
+                            <li class="game-option" id="objectID-1">Option 1</li>
+                            <li class="game-option" id="objectID-2">Option 2</li>
+                            <li class="game-option" id="objectID-3">Option 3</li>   
+                        </ul><!--end of game choices-->
+                </div>
+                <div id="score-skip" class="">
+                    <button id="skip" class="">Next >></button>
+                </div>
+                <div id="gamestats" class="">
+                    Score: <span id="total-correct">00</span> /
+                    <span id="total-questions">00</span>
+                    <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
+                </div>
 
-        <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal">
-            New Game!
-        </button>
-    </div><!--end of card-->
-            
-    <div class="col-md-3"> </div> <!--empty thirds grid-->
+                <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal">
+                    New Game!
+                </button>
+            </div><!--end of card-->
+        </div>
+        <div class="col-md-3"> </div> <!--empty thirds grid-->
     
       <!--end of card-->
 
       <div class="col-md-3"></div>
       <!--empty thirds grid?-->
-    </div>
+    </div> <!--end of our main body row-->
 
 
         <!-- below this gate lies popup-central -->
@@ -85,10 +87,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <!--welcome answer pop-up end-->      
+        </div><!--end welcome answer pop-up-->      
         <!--correct answer pop-up-->        
             <div class="modal fade" id="correct-popup">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -102,8 +101,7 @@
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
-                    <!--modal header-->
+                    </div><!-- end modal header-->
                     <div class="modal-body">
                         <div class="container-fluid col-md-12">
                         <div class="row">
@@ -146,9 +144,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-    <!--end correct answer pop-up-->
+        </div><!--end correct answer pop-up-->
 
     <!-- linking to our current game.js -->
     <script src="game.js" defer></script>
