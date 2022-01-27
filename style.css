@@ -9,13 +9,6 @@ html * {
     font-size: 200%
 }
 
-.tiny {
-    font-size: 50%;
-}
-.gigantic {
-    font-size: 200%
-}
-
 @media (max-width: 1000px){
     div#redheader {
         height:40px;
@@ -71,11 +64,15 @@ li.game-option {
     border-radius: 4px;
     margin: 5px;
     list-style: none;
-    
+}
+li.game-option:hover{
+    color: white;
 }
 li.game-option:hover {
-    background-color: #880077;
-  }
+    background-color: #e03;
+    transition: 0.3s;  
+}
+
 
 li.scoreboard {
     padding: 15px;
@@ -121,7 +118,15 @@ a.btn.metred {
     color: white;
     text-align: left;
     font-size:x-large;
+    margin-bottom: 25px;
 }
+
+#redheader p {
+    text-align: left;
+    padding: 0 15px 0;
+}
+
+
 
 #title,
 #met-header,
@@ -138,6 +143,9 @@ a.btn.metred {
 }
 
 
+#card {
+    padding: 25px 0 0 0;
+}
 
 
 

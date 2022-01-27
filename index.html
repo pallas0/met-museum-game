@@ -16,7 +16,7 @@
   <body>
     <div class="row">
         <div id="redheader" class="metred">
-            <span id="met-header" class="gigantic">The Metropolitan Museum of Art </span><span id="met-header-short">The Met</span><span id="indemnification" class="tiny">is in no way affiliated with this game.</span>
+            <p><span id="met-header" class="gigantic">The Metropolitan Museum of Art </span><span id="met-header-short">The Met</span><span id="indemnification" class="tiny">is in no way affiliated with this game.</span></p>
         </div>
         <header class="">
             <div class="">
@@ -51,7 +51,8 @@
                 <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal">
                     New Game!
                 </button>
-            </div><!--end of card-->
+            </div>
+            <!--end of card-->
         </div><!--end of card-->
     </div> <!--end of our main body row-->
 
@@ -86,9 +87,9 @@
             </div>
         </div><!--end welcome answer pop-up-->      
         <!--correct answer pop-up-->        
-            <div class="modal fade" id="correct-popup">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
+        <div class="modal fade" id="correct-popup">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title welcome-header-message" >Congratulations!</h5>
                         <button
@@ -101,43 +102,43 @@
                     </div><!-- end modal header-->
                     <div class="modal-body">
                         <div class="container-fluid col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                            <img
-                                src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff"
-                                id="modal-object-image"/>
-                            </div>
-                            <div id="correctModalObjectDetails" class="col-md-6">
-                            <p>
-                                You were right! That one was by
-                                <span id="artist-insert"></span>! Here is a little more
-                                information:
-                            </p>
-                            <h6>Title:</h6>
-                            <p id="modal-object-title">PLACEHOLDER TITLE</p>
-                            <h6>Artist Name:</h6>
-                            <p id="modal-object-artist">PLACEHOLDER NAME</p>
-                            <h6>Year:</h6>
-                            <p id="modal-object-year">PLACEHOLDER YEAR</p>
-                            </div>
-                        </div><!--end row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                <img
+                                    src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff"
+                                    id="modal-object-image"/>
+                                </div>
+                                <div id="correctModalObjectDetails" class="col-md-6">
+                                <p>
+                                    You were right! That one was by
+                                    <span id="artist-insert"></span>! Here is a little more
+                                    information:
+                                </p>
+                                <h6>Title:</h6>
+                                <p id="modal-object-title">PLACEHOLDER TITLE</p>
+                                <h6>Artist Name:</h6>
+                                <p id="modal-object-artist">PLACEHOLDER NAME</p>
+                                <h6>Year:</h6>
+                                <p id="modal-object-year">PLACEHOLDER YEAR</p>
+                                </div>
+                            </div><!--end row-->
                         </div>
                     </div><!--end modal body-->
                     <div class="modal-footer centered">
-                        <button
-                        type="button"
-                        class="btn btn-primary btn-lg"
-                        data-bs-dismiss="modal"
-                        id="modalNextQuestionButton">
-                        Next Question >
-                        </button>
-                        <a
-                        href="https://metmuseum.org"
-                        target="_blank"
-                        class="btn btn-primary btn-lg active metred"
-                        role="button"
-                        aria-pressed="true"
-                        >Visit the Met!</a>
+                            <button
+                            type="button"
+                            class="btn btn-primary btn-lg"
+                            data-bs-dismiss="modal"
+                            id="modalNextQuestionButton">
+                            Next Question >
+                            </button>
+                            <a
+                            href="https://metmuseum.org"
+                            target="_blank"
+                            class="btn btn-primary btn-lg active metred"
+                            role="button"
+                            aria-pressed="true"
+                            >Visit the Met!</a>
                     </div>
                 </div>
             </div>
