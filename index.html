@@ -52,6 +52,7 @@
                 <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal">
                     New Game!
                 </button>
+                <button role="button" type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#incorrect-answer-popup">open wrong answ modal</button>
             </div>
             <!--end of card-->
         </div><!--end of card-->
@@ -130,17 +131,38 @@
                             <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">
                             Next Question >
                             </button>
-                            <a
-                            href="https://metmuseum.org"
-                            target="_blank"
-                            class="btn btn-primary btn-lg active metred"
-                            role="button"
-                            aria-pressed="true"
-                            >Visit the Met!</a>
+                            <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
                     </div>
                 </div>
             </div>
         </div><!--end correct answer pop-up-->
+
+        <!--incorrect answer pop-up start-->  
+        <div class="modal fade" id="incorrect-answer-popup">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title welcome-header-message" >Oh no~!</p>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div><!--end modal header-->
+                    <div class="modal-body">
+                        <div class="container-fluid col-md-12">
+                            <div class="row">
+                                <div id="incorrect-answer-card" class="col-md-12">
+                                    <h4>Sorry!</h4>
+                                    <p>Try Again</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--modal body-->
+                    <div class="modal-footer centered">
+                        <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
+                    </div>
+                </div>
+            </div>
+        </div><!--end welcome answer pop-up-->   
 
     <!-- linking to our current game.js -->
     <script src="game.js" defer></script>
