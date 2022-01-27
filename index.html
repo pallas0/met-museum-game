@@ -52,7 +52,7 @@
                 <button role="button" type="button" class="btn btn-primary new-game-button" data-bs-toggle="modal">
                     New Game!
                 </button>
-                <button role="button" type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#incorrect-answer-popup">open wrong answ modal</button>
+                <button role="button" type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#incorrectgit-popup">open wrong answ modal</button>
             </div>
             <!--end of card-->
         </div><!--end of card-->
@@ -136,41 +136,55 @@
                 </div>
             </div>
         </div><!--end correct answer pop-up-->
-
-        <!--incorrect answer pop-up start-->  
-        <div class="modal fade" id="incorrect-answer-popup">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p class="modal-title welcome-header-message" >Oh no~!</p>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div><!--end modal header-->
-                    <div class="modal-body">
-                        <div class="container-fluid col-md-12">
-                            <div class="row">
-                                <div id="incorrect-answer-card" class="col-md-12">
-                                    <h4>Sorry!</h4>
-                                    <p>Try Again</p>
-                                </div>
-                            </div>
+ <!--incorrect answer pop-up-->        
+ <div class="modal fade" id="incorrect-popup">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title welcome-header-message" >Oops!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!-- end modal header-->
+            <div class="modal-body">
+                <div class="container-fluid col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <img
+                            src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff"
+                            id="modal-object-image"/>
                         </div>
-                    </div><!--modal body-->
-                    <div class="modal-footer centered">
-                        <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
-                    </div>
+                        <div id="correctModalObjectDetails" class="col-md-6">
+                        <p>
+                            That piece was by 
+                            <span id="artist-insert"></span>! Here is a little more
+                            information:
+                        </p>
+                        <h6>Title:</h6>
+                        <p id="modal-object-title">PLACEHOLDER TITLE</p>
+                        <h6>Artist Name:</h6>
+                        <p id="modal-object-artist">PLACEHOLDER NAME</p>
+                        <h6>Year:</h6>
+                        <p id="modal-object-year">PLACEHOLDER YEAR</p>
+                        </div>
+                    </div><!--end row-->
                 </div>
+            </div><!--end modal body-->
+            <div class="modal-footer centered">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                    Next Question >
+                    </button>
+                    <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
             </div>
-        </div><!--end welcome answer pop-up-->   
+        </div>
+    </div>
+</div><!--end incorrect answer pop-up-->
+
 
     <!-- linking to our current game.js -->
     <script src="game.js" defer></script>
     <!-- linking to the bootstrap bundle -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
-      <script src="quote-generator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="quote-generator.js"></script>
   </body>
 </html>
