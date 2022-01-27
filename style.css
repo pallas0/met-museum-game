@@ -66,7 +66,7 @@ li.game-option {
     background: transparent;
     border: black solid 2px;
     border-radius: 4px;
-    margin: 5px;
+    margin: 5px 5px 0px 5px;
     list-style: none;
 }
 li.game-option:hover{
