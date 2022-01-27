@@ -1,85 +1,84 @@
 html * {
-    text-align: center;
+  text-align: center;
 }
 
 .tiny {
-    font-size: 50%;
+  font-size: 50%;
 }
 .gigantic {
-    font-size: 200%
+  font-size: 200%;
 }
 
-@media (max-width: 1000px){
-    div#redheader {
-        height:40px;
-    }
-    .tiny {
-        font-size:45%;
-    }
-    .gigantic {
-        font-size:120%
-    }
-    #cheekynote {
-        font-size:70%
-    }
+@media (max-width: 1000px) {
+  div#redheader {
+    height: 40px;
+    display: flex;
+  }
+  .tiny {
+    font-size: 45%;
+  }
+  .gigantic {
+    font-size: 120%;
+  }
+  #cheekynote {
+    font-size: 70%;
+  }
 }
-@media (max-width: 425px){
-    div#redheader {
-        height:30px;
-    }
-    .tiny {
-        font-size:42%;
-    }
-    .gigantic {
-        font-size:70%
-    }
-    #cheekynote {
-        font-size:60%
-    }
-    img#welcome-image {
-        width: 25vh;
-    }
-    #met-header {
-        display: none;
-    }
-    span#met-header-short {
-        display: inline;
-    }
+@media (max-width: 425px) {
+  div#redheader {
+    height: 30px;
+  }
+  .tiny {
+    font-size: 42%;
+  }
+  .gigantic {
+    font-size: 70%;
+  }
+  #cheekynote {
+    font-size: 60%;
+  }
+  img#welcome-image {
+    width: 25vh;
+  }
+  #met-header {
+    display: none;
+  }
+  span#met-header-short {
+    display: inline;
+  }
 }
 
 ul#game-pieces {
-    display: inline-block;
-    list-style: none;
-    list-style-type: none;
-    position:relative;
-    float: none;
-    text-align: center;
-    padding: 0px
+  display: inline-block;
+  list-style: none;
+  list-style-type: none;
+  position: relative;
+  float: none;
+  text-align: center;
+  padding: 0px;
 }
 li.game-option {
-    padding: 15px;
-    position: relative;
-    background: transparent;
-    border: black solid 2px;
-    border-radius: 4px;
-    margin: 5px;
-    list-style: none;
-}
-li.game-option:hover{
-    color: white;
+  padding: 15px;
+  position: relative;
+  background: transparent;
+  border: black solid 2px;
+  border-radius: 4px;
+  margin: 5px;
+  list-style: none;
 }
 li.game-option:hover {
-    background-color: #e03;
-    transition: 0.3s;  
+  color: white;
+}
+li.game-option:hover {
+  background-color: #e03;
+  transition: 0.3s;
 }
 
-
 li.scoreboard {
-    padding: 15px;
-    background-color: #005500;
-    margin: 5px;
-    display: inline-block;
-
+  padding: 15px;
+  background-color: #005500;
+  margin: 5px;
+  display: inline-block;
 }
 /* #gamepiece-holder {
     float: none;
@@ -91,79 +90,75 @@ li.scoreboard {
 } */
 
 #about-the-game {
-    max-width: 40vh;
-    position: relative;
-    margin: auto;
+  max-width: 40vh;
+  position: relative;
+  margin: auto;
 }
 
 #main-image {
-    max-width: 40vh;
-    max-height: 40vh
-
+  max-width: 40vh;
+  max-height: 40vh;
 }
 
 #score-skip {
-    margin: auto;
+  margin: auto;
 }
 .metred,
 a.btn.metred {
-    background: #e03;
-    border-color: #e45;
+  background: #e03;
+  border-color: #e45;
 }
 
 #redheader {
-    height: 70px;
-    background: #e03;
-    z-index:3000;
-    color: white;
-    text-align: left;
-    font-size:x-large;
-    margin-bottom: 25px;
+  height: 70px;
+  background: #e03;
+  z-index: 3000;
+  color: white;
+  text-align: left;
+  font-size: x-large;
+  margin-bottom: 25px;
 }
 
 #redheader p {
-    text-align: left;
-    padding: 0 15px 0;
+  text-align: left;
+  padding: 0 15px 0;
 }
 
-
+#gamestats {
+  margin: 0.5vh;
+}
 
 #title,
 #met-header,
 #met-header-short,
 #welcome-card h4 {
-    font-family: 'Gilda Display', serif;   
+  font-family: "Gilda Display", serif;
 }
 #met-header-short {
-    display: none;
+  display: none;
 }
 
-#indemnification{
-    color: #444
+#indemnification {
+  color: #444;
 }
-
 
 #card {
-    padding: 25px 0 0 0;
+  padding: 25px 0 0 0;
 }
-
-
-
-
 
 /* modal windows */
 #welcome-image {
-    width: 40vh;
+  width: 40vh;
 }
 #modal-object-image {
-    width: 30vh;
+  width: 30vh;
 }
 #welcome-popup {
-    background: #666
+  background: #666;
 }
 #correctModalObjectDetails * {
-    text-align: left;
+  text-align: left;
 }
 #correct-popup h6 {
-    background: #999
+  background: #999;
 }
