@@ -66,6 +66,11 @@ a.btn.metred {
     height: 70px;
     background: #e03;
     z-index:3000;
+    color: white;
+    text-align: left;
+    font-size:x-large;
+    font-family: 'Gilda Display', serif;
+
 }
 
 #start-game-button, 
