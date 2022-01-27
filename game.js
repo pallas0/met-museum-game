@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const option1 = document.getElementById("objectID-1");
   const option2 = document.getElementById("objectID-2");
   const option3 = document.getElementById("objectID-3");
+  const nextButton = document.getElementById("skip")
   
   const scoreEl = document.getElementById("scorekeeper");
   const timeLeftEl = document.getElementById("timeleft");
@@ -27,6 +28,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // window.location.reload()
     reset();
 })
+
+  nextButton.addEventListener("click", function(e) {
+    reset();
+    totalQuestions++
+    totalQuestionsScore.textContent = totalQuestions
+  })
 
 
 let correctAnswers = 0;
@@ -144,14 +151,14 @@ async function searchResults(data) {
       totalCorrectScore.textContent = correctAnswers;
       totalQuestionsScore.textContent = totalQuestions;
       // openModalWindow()
-      // reset();
+      reset();
     } else {
       alert("Incorrect! Better luck next round!");
       console.log("wrong!");
       totalQuestions++;
       totalQuestionsScore.textContent = totalQuestions;
       // openModalWindow()
-      // reset();
+      reset();
     }
   }
   //reset the game board (currently just clears, will need to fire goSearch again)
@@ -160,7 +167,7 @@ async function searchResults(data) {
     option2.setAttribute("data-id", "");
     option3.setAttribute("data-id", "");
     mainImage.setAttribute("data-id", "");
-    welcomeScreen()
+    //welcomeScreen()
     goSearch()
   };
   
