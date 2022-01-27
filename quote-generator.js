@@ -24,6 +24,5 @@ let quoteRando = Math.floor(Math.random() * quotes.length);
 function gimme(arry){
     return arry[quoteRando]
 }
-//gimme(quotes)
 
 injectpoint.innerText = gimme(quotes)
