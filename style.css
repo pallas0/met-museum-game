@@ -60,7 +60,7 @@ ul#game-pieces {
     padding: 0px
 }
 li.game-option {
-    padding: 15px;
+    padding: 10px;
     position: relative;
     background: transparent;
     border: black solid 2px;
@@ -71,19 +71,16 @@ li.game-option {
 li.game-option:hover{
     color: white;
 }
+button#start-game-button:hover,
+button.next-button:hover,
+button.new-game-button:hover,
 li.game-option:hover {
     background-color: #e03;
     transition: 0.3s;  
+    border-color:transparent;
+    color: white;
 }
 
-
-li.scoreboard {
-    padding: 15px;
-    background-color: #005500;
-    margin: 5px;
-    display: inline-block;
-
-}
 #about-the-game {
     max-width: 40vh;
     position: relative;
@@ -95,17 +92,20 @@ li.scoreboard {
     max-height: 40vh
 
 }
-
-#score-skip {
-    margin: auto;
-}
+button#start-game-button,
+button.next-button,
 button.new-game-button {
     background: none;
     width: 12em;
     border: black solid 2px;
-    padding: 10px;
+    padding: 8px;
+    color: black;
 }
 
+#game-info-controls {
+    position: relative;
+    display: block;
+}
 
 .metred,
 a.btn.metred {
@@ -159,6 +159,7 @@ a.btn.metred {
 }
 #modal-object-image {
     width: 30vh;
+
 }
 #welcome-popup {
     background: #666

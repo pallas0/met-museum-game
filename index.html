@@ -14,10 +14,10 @@
       crossorigin="anonymous"/>
   </head>
   <body>
-    <div class="row">
-        <div id="redheader" class="metred">
-            <p><span id="met-header" class="gigantic">The Metropolitan Museum of Art </span><span id="met-header-short">The Met</span><span id="indemnification" class="tiny">is in no way affiliated with this game.</span></p>
-        </div>
+      <div id="redheader" class="metred">
+          <p><span id="met-header" class="gigantic">The Metropolitan Museum of Art </span><span id="met-header-short">The Met</span><span id="indemnification" class="tiny">is in no way affiliated with this game.</span></p>
+      </div>
+    <div class="container">
         <header class="">
             <div class="">
                 <h1 id="title">Met Guess</h1>
@@ -41,17 +41,21 @@
                             <li class="game-option" id="objectID-3">Option 3</li>   
                         </ul><!--end of game choices-->
                 </div>
-                <div id="score-skip" class="">
-                    <button id="skip" class="">Next >></button>
+                <div id="game-info-controls">
+                    <div id="gamestats" class="">
+                        Score: <span id="total-correct">00</span> /
+                        <span id="total-questions">00</span>
+                        <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
+                    </div>
+                    <div class="gap-2 d-md-block" id="controls-holder">
+                        <!-- <div id="score-skip" class=""> -->
+                            <button id="skip" class="btn btn-primary new-game-button btn-outline-dark">Next >></button>
+                        <!-- </div> -->
+                        <button role="button" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
+                            New Game!
+                        </button>
+                    </div>
                 </div>
-                <div id="gamestats" class="">
-                    Score: <span id="total-correct">00</span> /
-                    <span id="total-questions">00</span>
-                    <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
-                </div>
-                <button role="button" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
-                    New Game!
-                </button>
                 <!-- <button role="button" type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#incorrectgit-popup">open wrong answ modal</button> -->
             </div>
             <!--end of card-->
@@ -95,23 +99,17 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title welcome-header-message" >Congratulations!</h5>
-                        <button
-                        type="button"
-                        class="close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close">
+                        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div><!-- end modal header-->
                     <div class="modal-body">
-                        <div class="container-fluid col-md-12">
-                            <div class="row">
-                                <div class="col-md-6">
-                                <img
-                                    src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff"
-                                    id="modal-object-image"/>
+                        <div class="container-fluid">
+                            <div class="row row d-flex align-items-center">
+                                <div class="col-sm">
+                                    <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-object-image"/>
                                 </div>
-                                <div id="correctModalObjectDetails" class="col-md-6">
+                                <div id="correctModalObjectDetails" class="col-sm">
                                 <p>
                                     You were right! That one was by
                                     <span id="artist-insert"></span>! Here is a little more
@@ -128,7 +126,7 @@
                         </div>
                     </div><!--end modal body-->
                     <div class="modal-footer centered">
-                            <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                            <button type="button" class="btn btn-primary btn-lg next-button" data-bs-dismiss="modal" id="modalNextQuestionButton">
                             Next Question >
                             </button>
                             <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
