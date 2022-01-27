@@ -2,7 +2,52 @@ html * {
     text-align: center;
 }
 
-ul {
+.tiny {
+    font-size: 50%;
+}
+.gigantic {
+    font-size: 200%
+}
+
+@media (max-width: 1000px){
+    div#redheader {
+        height:40px;
+    }
+    .tiny {
+        font-size:45%;
+    }
+    .gigantic {
+        font-size:120%
+    }
+    #cheekynote {
+        font-size:70%
+    }
+}
+@media (max-width: 425px){
+    div#redheader {
+        height:30px;
+    }
+    .tiny {
+        font-size:42%;
+    }
+    .gigantic {
+        font-size:70%
+    }
+    #cheekynote {
+        font-size:60%
+    }
+    img#welcome-image {
+        width: 25vh;
+    }
+    #met-header {
+        display: none;
+    }
+    span#met-header-short {
+        display: inline;
+    }
+}
+
+ul#game-pieces {
     display: inline-block;
     list-style: none;
     list-style-type: none;
@@ -12,15 +57,22 @@ ul {
     padding: 0px
 }
 li.game-option {
-    padding: 20px;
+    padding: 15px;
     position: relative;
-    background: #555;
+    background: transparent;
+    border: black solid 2px;
+    border-radius: 4px;
     margin: 5px;
-    display: inline-block;
+    list-style: none;
+}
+li.game-option:hover{
+    color: white;
 }
 li.game-option:hover {
-    background-color: #880077;
-  }
+    background-color: #e03;
+    transition: 0.3s;  
+}
+
 
 li.scoreboard {
     padding: 15px;
@@ -29,15 +81,25 @@ li.scoreboard {
     display: inline-block;
 
 }
-#gamepiece-holder, 
-#score-skip {
+/* #gamepiece-holder {
     float: none;
-    display: inline-block;
+    display: block;
     position: relative;
     height: 100px;
-    display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+#about-the-game {
+    max-width: 40vh;
+    position: relative;
+    margin: auto;
+}
+
+#main-image {
+    max-width: 40vh;
+    max-height: 40vh
+
 }
 
 #score-skip {
@@ -53,22 +115,55 @@ a.btn.metred {
     height: 70px;
     background: #e03;
     z-index:3000;
+    color: white;
+    text-align: left;
+    font-size:x-large;
+    margin-bottom: 25px;
 }
 
-#start-game-button, 
-div.modal-content .modal-footer .new-game-button {
-    position: absolute;
-    left: 20px;
+#redheader p {
+    text-align: left;
+    padding: 0 15px 0;
 }
+
+
+
+#title,
+#met-header,
+#met-header-short,
+#welcome-card h4 {
+    font-family: 'Gilda Display', serif;   
+}
+#met-header-short {
+    display: none;
+}
+
+#indemnification{
+    color: #444
+}
+
+
+#card {
+    padding: 25px 0 0 0;
+}
+
+
+
+
 
 /* modal windows */
-#welcome-image{
+#welcome-image {
     width: 40vh;
 }
 #modal-object-image {
     width: 30vh;
 }
-
+#welcome-popup {
+    background: #666
+}
 #correctModalObjectDetails * {
     text-align: left;
+}
+#correct-popup h6 {
+    background: #999
 }
