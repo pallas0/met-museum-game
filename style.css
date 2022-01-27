@@ -30,7 +30,7 @@ html * {
         font-size:70%
     }
 }
-@media (max-width: 320px){
+@media (max-width: 425px){
     div#redheader {
         height:30px;
     }
