@@ -23,6 +23,15 @@ html * {
         font-size:70%
     }
 }
+@media (max-width: 768px){
+    #met-header {
+        display: none;
+    }
+    span#met-header-short {
+        display: inline;
+    }
+}
+
 @media (max-width: 425px){
     div#redheader {
         height:30px;
@@ -38,12 +47,6 @@ html * {
     }
     img#welcome-image {
         width: 25vh;
-    }
-    #met-header {
-        display: none;
-    }
-    span#met-header-short {
-        display: inline;
     }
 }
 
