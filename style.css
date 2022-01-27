@@ -6,88 +6,88 @@ html * {
   font-size: 50%;
 }
 .gigantic {
-  font-size: 200%;
+
+    font-size: 200%
 }
 
-@media (max-width: 1000px) {
-  div#redheader {
-    height: 40px;
-    display: flex;
-  }
-  .tiny {
-    font-size: 45%;
-  }
-  .gigantic {
-    font-size: 120%;
-  }
-  #cheekynote {
-    font-size: 70%;
-  }
+@media (max-width: 1000px){
+    div#redheader {
+        height:40px;
+    }
+    .tiny {
+        font-size:45%;
+    }
+    .gigantic {
+        font-size:120%
+    }
+    #cheekynote {
+        font-size:70%
+    }
+    .footerleft{
+        display: none;
+    }
 }
-@media (max-width: 425px) {
-  div#redheader {
-    height: 30px;
-  }
-  .tiny {
-    font-size: 42%;
-  }
-  .gigantic {
-    font-size: 70%;
-  }
-  #cheekynote {
-    font-size: 60%;
-  }
-  img#welcome-image {
-    width: 25vh;
-  }
-  #met-header {
-    display: none;
-  }
-  span#met-header-short {
-    display: inline;
-  }
+@media (max-width: 768px){
+    #met-header {
+        display: none;
+    }
+    span#met-header-short {
+        display: inline;
+    }
+
+}
+
+@media (max-width: 425px){
+    div#redheader {
+        height:30px;
+    }
+    .tiny {
+        font-size:42%;
+    }
+    .gigantic {
+        font-size:70%
+    }
+    #cheekynote {
+        font-size:60%
+    }
+    img#welcome-image {
+        width: 25vh;
+    }
 }
 
 ul#game-pieces {
-  display: inline-block;
-  list-style: none;
-  list-style-type: none;
-  position: relative;
-  float: none;
-  text-align: center;
-  padding: 0px;
+    display: inline-block;
+    list-style: none;
+    list-style-type: none;
+    position:relative;
+    float: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 li.game-option {
-  padding: 15px;
-  position: relative;
-  background: transparent;
-  border: black solid 2px;
-  border-radius: 4px;
-  margin: 5px;
-  list-style: none;
+    padding: 10px;
+    position: relative;
+    background: transparent;
+    border: black solid 2px;
+    border-radius: 4px;
+    margin: 5px 5px 0px 5px;
+    list-style: none;
 }
 li.game-option:hover {
   color: white;
 }
+button#start-game-button:hover,
+button.next-button:hover,
+button.new-game-button:hover,
 li.game-option:hover {
-  background-color: #e03;
-  transition: 0.3s;
-}
 
-li.scoreboard {
-  padding: 15px;
-  background-color: #005500;
-  margin: 5px;
-  display: inline-block;
+    background-color: #e03;
+    transition: 0.3s;
+    border-style:inset;  
+    border-color:transparent;
+    color: white;
 }
-/* #gamepiece-holder {
-    float: none;
-    display: block;
-    position: relative;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-} */
 
 #about-the-game {
   max-width: 40vh;
@@ -96,17 +96,50 @@ li.scoreboard {
 }
 
 #main-image {
-  max-width: 40vh;
-  max-height: 40vh;
+
+    max-width: 40wh;
+    max-height: 40vh;
+    padding: 0 0 16 px 0;
+}
+button#start-game-button,
+button.next-button,
+button.new-game-button {
+    background: none;
+    width: 12em;
+    border: black solid 2px;
+    padding: 8px;
+    color: black;
 }
 
-#score-skip {
-  margin: auto;
+#game-info-controls {
+    position: relative;
+    display: block;
 }
+
+#gamestats {
+    background: none;
+    border: black solid 2px;
+    padding: 10px 15px 10px 15px ;
+    color: black;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 40px;
+    background: black;
+    color: white;
+
+
+}
+
 .metred,
 a.btn.metred {
   background: #e03;
   border-color: #e45;
+}
+
+
+a.btn.metred:hover {
+    background: #e45;
+    transition: 0.3s;
 }
 
 #redheader {
@@ -143,15 +176,42 @@ a.btn.metred {
 }
 
 #card {
-  padding: 25px 0 0 0;
+
+    padding: 18px 0 5px 0;
 }
+
+footer.footer {
+    size: 2em;
+    background: black;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: .8em
+}
+footer span{
+    padding: 8px
+}
+span.footerleft {
+    float: left;
+}
+span.footerright {
+    float: right;
+}
+
+
 
 /* modal windows */
 #welcome-image {
   width: 40vh;
 }
 #modal-object-image {
-  width: 30vh;
+
+    width: 30vh;
+
+
 }
 #welcome-popup {
   background: #666;
