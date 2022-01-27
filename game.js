@@ -1,43 +1,32 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-    welcomeScreen()
-    init()    
-  });
-  //document selectors
-  const mainImage = document.getElementById("main-image");
-  const option1 = document.getElementById("objectID-1");
-  const option2 = document.getElementById("objectID-2");
-  const option3 = document.getElementById("objectID-3");
-  const nextButton = document.getElementById("skip")
-  
-  const scoreEl = document.getElementById("scorekeeper");
-  const timeLeftEl = document.getElementById("timeleft");
-  const welcomePopupEl = document.getElementById("modal-holder")
-  
-  const totalCorrectScore = document.getElementById("total-correct");
-  const totalQuestionsScore = document.getElementById("total-questions");
-  
-  const newGameButton = document.querySelector('.new-game-button')
- //event listeners 
-  option1.addEventListener("click", winLogic);
-  option2.addEventListener("click", winLogic);
-  option3.addEventListener("click", winLogic);
+window.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+  welcomeScreen();
+  init();
+});
+//document selectors
+const mainImage = document.getElementById("main-image");
+const option1 = document.getElementById("objectID-1");
+const option2 = document.getElementById("objectID-2");
+const option3 = document.getElementById("objectID-3");
+const nextButton = document.getElementById("skip");
 
-  newGameButton.addEventListener("click", function(e) {
-    reset();
-    totalQuestionsScore.textContent = 0
-    totalCorrectScore.textContent = 0
-})
+const scoreEl = document.getElementById("scorekeeper");
+const timeLeftEl = document.getElementById("timeleft");
+const welcomePopupEl = document.getElementById("modal-holder");
 
-  nextButton.addEventListener("click", function(e) {
-    e.preventDefault();
-    reset();
-    totalQuestions++
-    totalQuestionsScore.textContent = totalQuestions
-  })
+const totalCorrectScore = document.getElementById("total-correct");
+const totalQuestionsScore = document.getElementById("total-questions");
 
+const newGameButton = document.querySelector(".new-game-button");
+//event listeners
+option1.addEventListener("click", winLogic);
+option2.addEventListener("click", winLogic);
+option3.addEventListener("click", winLogic);
 
+newGameButton.addEventListener("click", function (e) {
   reset();
+  totalQuestionsScore.textContent = 0;
+  totalCorrectScore.textContent = 0;
 });
 
 nextButton.addEventListener("click", function (e) {
@@ -114,7 +103,6 @@ const gameOptions = {
 
 //build function that loops over gameOptions to check for blank strings
 function checkMissingStringsInObject() {
-  console.log(gameOptions);
   for (const option in gameOptions) {
     if (gameOptions[option].artist === "") {
       gameOptions[option] = gameOptions.option4;
@@ -122,7 +110,6 @@ function checkMissingStringsInObject() {
       gameOptions[option] = gameOptions.option5;
     }
   }
-  console.log(gameOptions);
 }
 
 async function searchResults(data) {
