@@ -1,11 +1,11 @@
-# met-museum-game
+# Met Guess
 
 Collaborators:
 ### Jonathan Potter https://github.com/hariseldon27
 ### Mike Starr https://github.com/personnamedmike
 ### Amelia Risner  https://github.com/pallas0
 
-Met Museum Game
+Met Guess
 
 An educational multiple choice game covering the pieces at the Met Museum of Art.  We used HTMl and Javascript to create the application framework and functionality.
 
