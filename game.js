@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   option3.addEventListener("click", winLogic);
 
   newGameButton.addEventListener("click", function(e) {
+    e.preventDefault();
     reset();
     totalQuestionsScore.textContent = 0
     totalCorrectScore.textContent = 0
@@ -168,6 +169,7 @@ function initialLoad() {
 function winLogic() {
   //see if data-id matches mainImage.dat-id
   if (this.getAttribute("data-id") === mainImage.getAttribute("data-id")) {
+    answerPopUpFiller();
     correctAnswerPopUp();
     console.log("correct!");
     correctAnswers++;
@@ -177,10 +179,12 @@ function winLogic() {
     // openModalWindow()
     reset();
   } else {
-    alert("Incorrect! Better luck next round!");
+    answerPopUpFiller()
     console.log("wrong!");
+    
     totalQuestions++;
     totalQuestionsScore.textContent = totalQuestions;
+    incorrectAnswerPopUp()
     // openModalWindow()
     reset();
   }
@@ -191,7 +195,6 @@ const reset = () => {
   option2.setAttribute("data-id", "");
   option3.setAttribute("data-id", "");
   mainImage.setAttribute("data-id", "");
-  //welcomeScreen()
   goSearch();
 };
 
@@ -205,26 +208,47 @@ function welcomeScreen() {
   );
   welcomePopUp.show();
 }
+function incorrectAnswerPopUp() {
+  const incorrectAnswerPopUp = new bootstrap.Modal(
+    document.getElementById("incorrect-popup"),
+    {
+      keyboard: false,
+    }
+  );
+  incorrectAnswerPopUp.show();
+}
+function correctAnswerPopUp(){
+const correctAnsPopUp = new bootstrap.Modal(
+  document.getElementById("correct-popup"),
+  {
+    keyboard: false,
+}
+);
+correctAnsPopUp.show();
+}
 //this function fills in the information for our popup with the correct info and opens it
-function correctAnswerPopUp() {
+function answerPopUpFiller() {
   //select our modal dom elements
-  const modalObjectTitle = document.getElementById("modal-object-title");
-  const modalObjectArtist = document.getElementById("modal-object-artist");
-  const modalObjectArtistInsert = document.getElementById("artist-insert");
-  const modalObjectYear = document.getElementById("modal-object-year");
-  const modalObjectImage = document.getElementById("modal-object-image");
+  const modalObjectTitle = document.getElementById("correct-modal-object-title");
+  const modalObjectArtist = document.getElementById("correct-modal-object-artist");
+  const modalObjectArtistInsert = document.getElementById("correct-artist-insert");
+  const modalObjectYear = document.getElementById("correct-modal-object-year");
+  const modalObjectImage = document.getElementById("correct-modal-object-image");
+  const incorrectModalObjectTitle = document.getElementById("incorrect-modal-object-title");
+  const incorrectModalObjectArtist = document.getElementById("incorrect-modal-object-artist");
+  const incorrectModalObjectArtistInsert = document.getElementById("incorrect-artist-insert");
+  const incorrectModalObjectYear = document.getElementById("incorrect-modal-object-year");
+  const incorrectModalObjectImage = document.getElementById("incorrect-modal-object-image");
   //replace elements with our correct answer
   modalObjectTitle.textContent = gameOptions.correct.title;
   modalObjectArtist.textContent = gameOptions.correct.artist;
   modalObjectArtistInsert.textContent = gameOptions.correct.artist;
   modalObjectYear.textContent = gameOptions.correct.year;
   modalObjectImage.src = gameOptions.correct.image;
-  //this open the popup
-  const correctAnsPopUp = new bootstrap.Modal(
-    document.getElementById("correct-popup"),
-    {
-      keyboard: false,
-    }
-  );
-  correctAnsPopUp.show();
+  incorrectModalObjectTitle.textContent = gameOptions.correct.title;
+  incorrectModalObjectArtist.textContent = gameOptions.correct.artist;
+  incorrectModalObjectArtistInsert.textContent = gameOptions.correct.artist;
+  incorrectModalObjectYear.textContent = gameOptions.correct.year;
+  incorrectModalObjectImage.src = gameOptions.correct.image;
+  //then after this open the popup
 }

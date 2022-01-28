@@ -216,6 +216,8 @@ span.footerright {
 #welcome-popup {
   background: #666;
 }
+
+#incorrectModalObjectDetails, 
 #correctModalObjectDetails * {
   text-align: left;
 }
