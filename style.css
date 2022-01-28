@@ -26,6 +26,10 @@ html * {
     .footerleft{
         display: none;
     }
+    #correct-modal-object-image,
+    #incorrect-modal-object-image {
+        width: 20em;
+    }
 }
 @media (max-width: 768px){
     #met-header {
@@ -217,10 +221,11 @@ span.footerright {
   background: #666;
 }
 
-#incorrectModalObjectDetails, 
+#incorrectModalObjectDetails *, 
 #correctModalObjectDetails * {
   text-align: left;
 }
-#correct-popup h6 {
+#correct-popup h6, 
+#incorrect-popup h6 {
   background: #999;
 }
