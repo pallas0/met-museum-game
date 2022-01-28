@@ -128,7 +128,7 @@ function checkMissingStringsInObject() {
 async function searchResults(data) {
   //this fills in our game pieces with randomly chosen objects
   for (let option in gameOptions) {
-    gameOptions[option].objectID = data.objectIDs[randomNum(1, 500)];
+    gameOptions[option].objectID = data.objectIDs[randomNum(1, 800)];
     let objectToFind = gameOptions[option].objectID;
     //use our three objectIDs to then search for each object and gather data
     await fetch(
