@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const totalCorrectScore = document.getElementById("total-correct");
   const totalQuestionsScore = document.getElementById("total-questions");
   
-  const newGameButton = document.querySelector('.new-game-button')
+  const newGameButton = document.getElementById('new-game')
  //event listeners 
   option1.addEventListener("click", winLogic);
   option2.addEventListener("click", winLogic);
@@ -29,23 +29,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     totalCorrectScore.textContent = 0
 })
 
-  nextButton.addEventListener("click", function(e) {
+nextButton.addEventListener("click", function(e) {
     e.preventDefault();
     reset();
     totalQuestions++
     totalQuestionsScore.textContent = totalQuestions
   })
 
+<<<<<<< HEAD
 
-  reset();
-});
-
-nextButton.addEventListener("click", function (e) {
-  reset();
-  totalQuestions++;
-  totalQuestionsScore.textContent = totalQuestions;
-});
-
+=======
+  
+>>>>>>> 1750bfe7fc4c9d456524dbc578cd11b3d71b3daf
 let correctAnswers = 0;
 let totalQuestions = 0;
 
@@ -53,8 +48,7 @@ function init() {
   goSearch();
 }
 
-const baseSearchParam =
-  "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13";
+const baseSearchParam = "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13";
 
 //returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max.
 function randomNum(min, max) {

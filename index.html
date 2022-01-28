@@ -43,15 +43,15 @@
                 </div>
                 <div id="game-info-controls">
                     <div id="gamestats" class="">
-                        Score: <span id="total-correct">00</span> /
-                        <span id="total-questions">00</span>
+                        Score: <span id="total-correct">0</span> /
+                        <span id="total-questions">0</span>
                         <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
                     </div>
                     <div class="gap-2 d-md-block" id="controls-holder">
                         <!-- <div id="score-skip" class=""> -->
                             <button id="skip" class="btn new-game-button btn-outline-dark">Next >></button>
                         <!-- </div> -->
-                        <button role="button" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
+                        <button role="button" id="new-game" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
                             New Game!
                         </button>
                     </div>
@@ -62,7 +62,7 @@
         </div><!--end of card-->
     </div> <!--end of our main body row-->
     <footer class="footer">
-        <span class="footerleft">All images found on this site come from the Met Collection an are protected by relevant copyright laws.</span>
+        <span class="footerleft">All images found on this site come from the Met Collection and are protected by relevant copyright laws.</span>
         <span class="footerright">Made with <a href="https://github.com/pallas0/met-museum-game" target="_blank" style="color: pink; text-decoration: none;">♥</a> in OR, CA, and NV</span>
     </footer>
 
@@ -154,7 +154,7 @@
                         <img
                             src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-object-image"/>
                         </div>
-                        <div id="correctModalObjectDetails" class="col-md-6">
+                        <div id="incorrectModalObjectDetails" class="col-sm">
                         <p>
                             That piece was by 
                             <span id="artist-insert"></span>! Here is a little more
