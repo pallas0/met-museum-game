@@ -43,15 +43,15 @@
                 </div>
                 <div id="game-info-controls">
                     <div id="gamestats" class="">
-                        Score: <span id="total-correct">00</span> /
-                        <span id="total-questions">00</span>
+                        Score: <span id="total-correct">0</span> correct /
+                        <span id="total-questions">0</span> tries
                         <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
                     </div>
                     <div class="gap-2 d-md-block" id="controls-holder">
                         <!-- <div id="score-skip" class=""> -->
                             <button id="skip" class="btn new-game-button btn-outline-dark">Next >></button>
                         <!-- </div> -->
-                        <button role="button" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
+                        <button role="button" id="new-game" type="button" class="btn btn-primary new-game-button btn-outline-dark" data-bs-toggle="modal">
                             New Game!
                         </button>
                     </div>
@@ -62,7 +62,7 @@
         </div><!--end of card-->
     </div> <!--end of our main body row-->
     <footer class="footer">
-        <span class="footerleft">All images found on this site come from the Met Collection an are protected by relevant copyright laws.</span>
+        <span class="footerleft">All images found on this site come from the Met Collection and are protected by relevant copyright laws.</span>
         <span class="footerright">Made with <a href="https://github.com/pallas0/met-museum-game" target="_blank" style="color: pink; text-decoration: none;">♥</a> in OR, CA, and NV</span>
     </footer>
 
@@ -110,26 +110,24 @@
                         <div class="container-fluid">
                             <div class="row row d-flex align-items-center">
                                 <div class="col-sm">
-                                    <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-object-image"/>
+                                    <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="correct-modal-object-image"/>
                                 </div>
-                                <div id="correctModalObjectDetails" class="col-sm">
-                                <p>
-                                    You were right! That one was by
-                                    <span id="artist-insert"></span>! Here is a little more
-                                    information:
-                                </p>
+                                <div  id="correctModalObjectDetails" class="col-sm">
+                                <p><strong>Correct!</strong></p><hr>
+                                <p>That one was by <span id="correct-artist-insert"></span>!</p>
+                                <p>Here is a little more information:</p>
                                 <h6>Title:</h6>
-                                <p id="modal-object-title">PLACEHOLDER TITLE</p>
+                                <p id="correct-modal-object-title" >PLACEHOLDER TITLE</p>
                                 <h6>Artist Name:</h6>
-                                <p id="modal-object-artist">PLACEHOLDER NAME</p>
+                                <p id="correct-modal-object-artist" >PLACEHOLDER NAME</p>
                                 <h6>Year:</h6>
-                                <p id="modal-object-year">PLACEHOLDER YEAR</p>
+                                <p id="correct-modal-object-year" >PLACEHOLDER YEAR</p>
                                 </div>
                             </div><!--end row-->
                         </div>
                     </div><!--end modal body-->
                     <div class="modal-footer centered">
-                            <button type="button" class="btn btn-primary btn-lg next-button" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                            <button type="button" class="btn btn-primary btn-lg next-button" data-bs-dismiss="modal" id="correct-modal-next-question-button">
                             Next Question >
                             </button>
                             <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
@@ -149,29 +147,25 @@
             </div><!-- end modal header-->
             <div class="modal-body">
                 <div class="container-fluid col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                        <img
-                            src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="modal-object-image"/>
+                    <div class="row row d-flex align-items-center">
+                        <div class="col-sm">
+                        <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="incorrect-modal-object-image"/>
                         </div>
-                        <div id="correctModalObjectDetails" class="col-md-6">
-                        <p>
-                            That piece was by 
-                            <span id="artist-insert"></span>! Here is a little more
-                            information:
-                        </p>
+                        <div id="incorrectModalObjectDetails" class="col-sm">
+                            <p><strong>Close, you'll get it next time!</strong></p><hr>
+                              <p>That piece was by <span id="incorrect-artist-insert"></span>! Here is a little more information:</p>
                         <h6>Title:</h6>
-                        <p id="modal-object-title">PLACEHOLDER TITLE</p>
+                        <p id="incorrect-modal-object-title">PLACEHOLDER TITLE</p>
                         <h6>Artist Name:</h6>
-                        <p id="modal-object-artist">PLACEHOLDER NAME</p>
+                        <p id="incorrect-modal-object-artist">PLACEHOLDER NAME</p>
                         <h6>Year:</h6>
-                        <p id="modal-object-year">PLACEHOLDER YEAR</p>
+                        <p id="incorrect-modal-object-year">PLACEHOLDER YEAR</p>
                         </div>
                     </div><!--end row-->
                 </div>
             </div><!--end modal body-->
             <div class="modal-footer centered">
-                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="incorrect-modal-next-question-button">
                     Next Question >
                     </button>
                     <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>

@@ -9,6 +9,7 @@ html * {
 
     font-size: 200%
 }
+/* media queries up top yo */
 
 @media (max-width: 1000px){
     div#redheader {
@@ -25,6 +26,10 @@ html * {
     }
     .footerleft{
         display: none;
+    }
+    #correct-modal-object-image,
+    #incorrect-modal-object-image {
+        width: 20em;
     }
 }
 @media (max-width: 768px){
@@ -55,6 +60,33 @@ html * {
     }
 }
 
+/* main button stylez */
+button#incorrect-modal-next-question-button,
+button#correct-modal-next-question-button,
+button#start-game-button,
+button.next-button,
+button.new-game-button {
+    background: none;
+    width: 12em;
+    border: black solid 2px;
+    padding: 7px;
+    color: black;
+}
+button#incorrect-modal-next-question-button:hover,
+button#correct-modal-next-question-button:hover,
+button#start-game-button:hover,
+button.next-button:hover,
+button.new-game-button:hover,
+li.game-option:hover {
+    
+    background-color: #e03;
+    transition: 0.3s;
+    border-style:inset;  
+    border-color:transparent;
+    color: white;
+}
+/* getting into the meat of it */
+
 ul#game-pieces {
     display: inline-block;
     list-style: none;
@@ -77,18 +109,6 @@ li.game-option {
 li.game-option:hover {
   color: white;
 }
-button#start-game-button:hover,
-button.next-button:hover,
-button.new-game-button:hover,
-li.game-option:hover {
-
-    background-color: #e03;
-    transition: 0.3s;
-    border-style:inset;  
-    border-color:transparent;
-    color: white;
-}
-
 #about-the-game {
   max-width: 40vh;
   position: relative;
@@ -100,15 +120,6 @@ li.game-option:hover {
     max-width: 40wh;
     max-height: 40vh;
     padding: 0 0 16 px 0;
-}
-button#start-game-button,
-button.next-button,
-button.new-game-button {
-    background: none;
-    width: 12em;
-    border: black solid 2px;
-    padding: 8px;
-    color: black;
 }
 
 #game-info-controls {
@@ -216,9 +227,12 @@ span.footerright {
 #welcome-popup {
   background: #666;
 }
+
+#incorrectModalObjectDetails *, 
 #correctModalObjectDetails * {
   text-align: left;
 }
-#correct-popup h6 {
+#correct-popup h6, 
+#incorrect-popup h6 {
   background: #999;
 }
