@@ -18,7 +18,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const totalQuestionsScore = document.getElementById("total-questions");
   
   const newGameButton = document.getElementById('new-game')
- //event listeners 
+
+  const correctModalNextButton = document.getElementById('correct-modal-next-question-button')
+  const incorrectModalNextButton = document.getElementById('incorrect-modal-next-question-button')
+  //event listeners 
   option1.addEventListener("click", winLogic);
   option2.addEventListener("click", winLogic);
   option3.addEventListener("click", winLogic);
@@ -29,13 +32,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     totalQuestionsScore.textContent = 0
     totalCorrectScore.textContent = 0
 })
-
 nextButton.addEventListener("click", function(e) {
     e.preventDefault();
     reset();
     totalQuestions++
     totalQuestionsScore.textContent = totalQuestions
   })
+correctModalNextButton.addEventListener("click", function(e) {
+    e.preventDefault();
+})
+incorrectModalNextButton.addEventListener("click", function(e) {
+    e.preventDefault();
+})
+
+
 
 let correctAnswers = 0;
 let totalQuestions = 0;

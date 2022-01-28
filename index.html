@@ -43,8 +43,8 @@
                 </div>
                 <div id="game-info-controls">
                     <div id="gamestats" class="">
-                        Score: <span id="total-correct">0</span> /
-                        <span id="total-questions">0</span>
+                        Score: <span id="total-correct">0</span> correct /
+                        <span id="total-questions">0</span> tries
                         <!-- <span class="" id="timeleft">Time Left: XX:XX</span> -->
                     </div>
                     <div class="gap-2 d-md-block" id="controls-holder">
@@ -113,7 +113,7 @@
                                     <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="correct-modal-object-image"/>
                                 </div>
                                 <div  id="correctModalObjectDetails" class="col-sm">
-                                <p><strong>Correct!</strong></p>
+                                <p><strong>Correct!</strong></p><hr>
                                 <p>That one was by <span id="correct-artist-insert"></span>!</p>
                                 <p>Here is a little more information:</p>
                                 <h6>Title:</h6>
@@ -127,7 +127,7 @@
                         </div>
                     </div><!--end modal body-->
                     <div class="modal-footer centered">
-                            <button type="button" class="btn btn-primary btn-lg next-button" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                            <button type="button" class="btn btn-primary btn-lg next-button" data-bs-dismiss="modal" id="correct-modal-next-question-button">
                             Next Question >
                             </button>
                             <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
@@ -152,7 +152,7 @@
                         <img src="https://plchldr.co/i/300x300?&bg=E8E6A2&fc=ffffff" id="incorrect-modal-object-image"/>
                         </div>
                         <div id="incorrectModalObjectDetails" class="col-sm">
-                            <p>Close, you'll get it next time!</p>
+                            <p><strong>Close, you'll get it next time!</strong></p><hr>
                               <p>That piece was by <span id="incorrect-artist-insert"></span>! Here is a little more information:</p>
                         <h6>Title:</h6>
                         <p id="incorrect-modal-object-title">PLACEHOLDER TITLE</p>
@@ -165,7 +165,7 @@
                 </div>
             </div><!--end modal body-->
             <div class="modal-footer centered">
-                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="modalNextQuestionButton">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="incorrect-modal-next-question-button">
                     Next Question >
                     </button>
                     <a href="https://metmuseum.org" target="_blank" class="btn btn-primary btn-lg active metred" role="button" aria-pressed="true">Visit the Met!</a>
