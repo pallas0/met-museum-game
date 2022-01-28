@@ -36,11 +36,6 @@ nextButton.addEventListener("click", function(e) {
     totalQuestionsScore.textContent = totalQuestions
   })
 
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 1750bfe7fc4c9d456524dbc578cd11b3d71b3daf
 let correctAnswers = 0;
 let totalQuestions = 0;
 
