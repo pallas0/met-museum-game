@@ -1,11 +1,12 @@
 html * {
-    text-align: center;
+  text-align: center;
 }
 
 .tiny {
-    font-size: 50%;
+  font-size: 50%;
 }
 .gigantic {
+
     font-size: 200%
 }
 
@@ -73,13 +74,14 @@ li.game-option {
     margin: 5px 5px 0px 5px;
     list-style: none;
 }
-li.game-option:hover{
-    color: white;
+li.game-option:hover {
+  color: white;
 }
 button#start-game-button:hover,
 button.next-button:hover,
 button.new-game-button:hover,
 li.game-option:hover {
+
     background-color: #e03;
     transition: 0.3s;
     border-style:inset;  
@@ -88,12 +90,13 @@ li.game-option:hover {
 }
 
 #about-the-game {
-    max-width: 40vh;
-    position: relative;
-    margin: auto;
+  max-width: 40vh;
+  position: relative;
+  margin: auto;
 }
 
 #main-image {
+
     max-width: 40wh;
     max-height: 40vh;
     padding: 0 0 16 px 0;
@@ -124,12 +127,13 @@ button.new-game-button {
     background: black;
     color: white;
 
+
 }
 
 .metred,
 a.btn.metred {
-    background: #e03;
-    border-color: #e45;
+  background: #e03;
+  border-color: #e45;
 }
 
 
@@ -139,38 +143,40 @@ a.btn.metred:hover {
 }
 
 #redheader {
-    height: 70px;
-    background: #e03;
-    z-index:3000;
-    color: white;
-    text-align: left;
-    font-size:x-large;
-    margin-bottom: 25px;
+  height: 70px;
+  background: #e03;
+  z-index: 3000;
+  color: white;
+  text-align: left;
+  font-size: x-large;
+  margin-bottom: 25px;
 }
 
 #redheader p {
-    text-align: left;
-    padding: 0 15px 0;
+  text-align: left;
+  padding: 0 15px 0;
 }
 
-
+#gamestats {
+  margin: 0.5vh;
+}
 
 #title,
 #met-header,
 #met-header-short,
 #welcome-card h4 {
-    font-family: 'Gilda Display', serif;   
+  font-family: "Gilda Display", serif;
 }
 #met-header-short {
-    display: none;
+  display: none;
 }
 
-#indemnification{
-    color: #444
+#indemnification {
+  color: #444;
 }
-
 
 #card {
+
     padding: 18px 0 5px 0;
 }
 
@@ -196,20 +202,23 @@ span.footerright {
 }
 
 
+
 /* modal windows */
 #welcome-image {
-    width: 40vh;
+  width: 40vh;
 }
 #modal-object-image {
+
     width: 30vh;
+
 
 }
 #welcome-popup {
-    background: #666
+  background: #666;
 }
 #correctModalObjectDetails * {
-    text-align: left;
+  text-align: left;
 }
 #correct-popup h6 {
-    background: #999
+  background: #999;
 }
