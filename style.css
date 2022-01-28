@@ -27,11 +27,13 @@ html * {
     .footerleft{
         display: none;
     }
+    #main-image,
     #correct-modal-object-image,
     #incorrect-modal-object-image {
         width: 20em;
     }
 }
+/* end large breakpoint */
 @media (max-width: 768px){
     #met-header {
         display: none;
@@ -39,8 +41,13 @@ html * {
     span#met-header-short {
         display: inline;
     }
+    footer.footer span {
+        display: none;
+    }
+    
 
-}
+} 
+/* end medium breakpoint */
 
 @media (max-width: 425px){
     div#redheader {
@@ -56,9 +63,15 @@ html * {
         font-size:60%
     }
     img#welcome-image {
-        width: 25vh;
+        width: 23vh;
+    }
+    #main-image,
+    #correct-modal-object-image,
+    #incorrect-modal-object-image {
+        width: 15em;
     }
 }
+/* end small breakpoint */
 
 /* main button stylez */
 button#incorrect-modal-next-question-button,
