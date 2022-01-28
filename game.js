@@ -1,51 +1,55 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-    welcomeScreen()
-    init()    
-  });
-  //document selectors
-  const mainImage = document.getElementById("main-image");
-  const option1 = document.getElementById("objectID-1");
-  const option2 = document.getElementById("objectID-2");
-  const option3 = document.getElementById("objectID-3");
-  const nextButton = document.getElementById("skip")
-  
-  const scoreEl = document.getElementById("scorekeeper");
-  const timeLeftEl = document.getElementById("timeleft");
-  const welcomePopupEl = document.getElementById("modal-holder")
-  
-  const totalCorrectScore = document.getElementById("total-correct");
-  const totalQuestionsScore = document.getElementById("total-questions");
-  
-  const newGameButton = document.getElementById('new-game')
+window.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+  welcomeScreen();
+  init();
+});
+//document selectors
+const mainImage = document.getElementById("main-image");
+const option1 = document.getElementById("objectID-1");
+const option2 = document.getElementById("objectID-2");
+const option3 = document.getElementById("objectID-3");
+const nextButton = document.getElementById("skip");
 
-  const correctModalNextButton = document.getElementById('correct-modal-next-question-button')
-  const incorrectModalNextButton = document.getElementById('incorrect-modal-next-question-button')
-  //event listeners 
-  option1.addEventListener("click", winLogic);
-  option2.addEventListener("click", winLogic);
-  option3.addEventListener("click", winLogic);
+const scoreEl = document.getElementById("scorekeeper");
+const timeLeftEl = document.getElementById("timeleft");
+const welcomePopupEl = document.getElementById("modal-holder");
 
-  newGameButton.addEventListener("click", function(e) {
-    e.preventDefault();
-    reset();
-    totalQuestionsScore.textContent = 0
-    totalCorrectScore.textContent = 0
-})
-nextButton.addEventListener("click", function(e) {
-    e.preventDefault();
-    reset();
-    totalQuestions++
-    totalQuestionsScore.textContent = totalQuestions
-  })
-correctModalNextButton.addEventListener("click", function(e) {
-    e.preventDefault();
-})
-incorrectModalNextButton.addEventListener("click", function(e) {
-    e.preventDefault();
-})
+const totalCorrectScore = document.getElementById("total-correct");
+const totalQuestionsScore = document.getElementById("total-questions");
 
+const newGameButton = document.getElementById("new-game");
 
+const correctModalNextButton = document.getElementById(
+  "correct-modal-next-question-button"
+);
+const incorrectModalNextButton = document.getElementById(
+  "incorrect-modal-next-question-button"
+);
+//event listeners
+option1.addEventListener("click", winLogic);
+option2.addEventListener("click", winLogic);
+option3.addEventListener("click", winLogic);
+
+newGameButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  reset();
+  totalQuestionsScore.textContent = 0;
+  totalCorrectScore.textContent = 0;
+  correctAnswers = 0;
+  totalQuestions = 0;
+});
+nextButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  reset();
+  totalQuestions++;
+  totalQuestionsScore.textContent = totalQuestions;
+});
+correctModalNextButton.addEventListener("click", function (e) {
+  e.preventDefault();
+});
+incorrectModalNextButton.addEventListener("click", function (e) {
+  e.preventDefault();
+});
 
 let correctAnswers = 0;
 let totalQuestions = 0;
@@ -54,7 +58,8 @@ function init() {
   goSearch();
 }
 
-const baseSearchParam = "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13";
+const baseSearchParam =
+  "https://collectionapi.metmuseum.org/public/collection/v1/search?medium=Paintings&q=cat&department=13";
 
 //returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max.
 function randomNum(min, max) {
@@ -189,12 +194,12 @@ function winLogic() {
     // openModalWindow()
     reset();
   } else {
-    answerPopUpFiller()
+    answerPopUpFiller();
     console.log("wrong!");
-    
+
     totalQuestions++;
     totalQuestionsScore.textContent = totalQuestions;
-    incorrectAnswerPopUp()
+    incorrectAnswerPopUp();
     // openModalWindow()
     reset();
   }
@@ -227,28 +232,46 @@ function incorrectAnswerPopUp() {
   );
   incorrectAnswerPopUp.show();
 }
-function correctAnswerPopUp(){
-const correctAnsPopUp = new bootstrap.Modal(
-  document.getElementById("correct-popup"),
-  {
-    keyboard: false,
-}
-);
-correctAnsPopUp.show();
+function correctAnswerPopUp() {
+  const correctAnsPopUp = new bootstrap.Modal(
+    document.getElementById("correct-popup"),
+    {
+      keyboard: false,
+    }
+  );
+  correctAnsPopUp.show();
 }
 //this function fills in the information for our popup with the correct info and opens it
 function answerPopUpFiller() {
   //select our modal dom elements
-  const modalObjectTitle = document.getElementById("correct-modal-object-title");
-  const modalObjectArtist = document.getElementById("correct-modal-object-artist");
-  const modalObjectArtistInsert = document.getElementById("correct-artist-insert");
+  const modalObjectTitle = document.getElementById(
+    "correct-modal-object-title"
+  );
+  const modalObjectArtist = document.getElementById(
+    "correct-modal-object-artist"
+  );
+  const modalObjectArtistInsert = document.getElementById(
+    "correct-artist-insert"
+  );
   const modalObjectYear = document.getElementById("correct-modal-object-year");
-  const modalObjectImage = document.getElementById("correct-modal-object-image");
-  const incorrectModalObjectTitle = document.getElementById("incorrect-modal-object-title");
-  const incorrectModalObjectArtist = document.getElementById("incorrect-modal-object-artist");
-  const incorrectModalObjectArtistInsert = document.getElementById("incorrect-artist-insert");
-  const incorrectModalObjectYear = document.getElementById("incorrect-modal-object-year");
-  const incorrectModalObjectImage = document.getElementById("incorrect-modal-object-image");
+  const modalObjectImage = document.getElementById(
+    "correct-modal-object-image"
+  );
+  const incorrectModalObjectTitle = document.getElementById(
+    "incorrect-modal-object-title"
+  );
+  const incorrectModalObjectArtist = document.getElementById(
+    "incorrect-modal-object-artist"
+  );
+  const incorrectModalObjectArtistInsert = document.getElementById(
+    "incorrect-artist-insert"
+  );
+  const incorrectModalObjectYear = document.getElementById(
+    "incorrect-modal-object-year"
+  );
+  const incorrectModalObjectImage = document.getElementById(
+    "incorrect-modal-object-image"
+  );
   //replace elements with our correct answer
   modalObjectTitle.textContent = gameOptions.correct.title;
   modalObjectArtist.textContent = gameOptions.correct.artist;
