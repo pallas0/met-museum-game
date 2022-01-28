@@ -36,16 +36,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     totalQuestionsScore.textContent = totalQuestions
   })
 
-
-  reset();
-});
-
-nextButton.addEventListener("click", function (e) {
-  reset();
-  totalQuestions++;
-  totalQuestionsScore.textContent = totalQuestions;
-});
-
+  
 let correctAnswers = 0;
 let totalQuestions = 0;
 
