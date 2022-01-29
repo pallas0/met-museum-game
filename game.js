@@ -131,6 +131,7 @@ function checkMissingStringsInObject() {
 }
 
 async function searchResults(data) {
+  showSpinner()
   //this fills in our game pieces with randomly chosen objects
   for (let option in gameOptions) {
     gameOptions[option].objectID = data.objectIDs[randomNum(1, 800)];
@@ -142,6 +143,7 @@ async function searchResults(data) {
       .then((resp) => resp.json())
       //next we set the artist name in our local object based on the info from the api
       .then((data) => {
+        
         // this points to the gameOptions object, and for each option.artist in the object
         //it will set that param to data.artistDisplayName as it comes from the api
         gameOptions[option].artist = data.artistDisplayName;
@@ -164,7 +166,7 @@ function randomizeWinnerOptions() {
   }
 }
 // initialLoad populates DOM
-function initialLoad() {
+async function initialLoad() {
   //set the id of each of the board pieces to match the input objectid
   option1.setAttribute("data-id", gameOptions.option1.objectID);
   option2.setAttribute("data-id", gameOptions.option2.objectID);
@@ -178,6 +180,7 @@ function initialLoad() {
   //the below attribute won't work if we don't fire randomizeWinnerOptions first
   mainImage.setAttribute("data-id", gameOptions.correct.objectID);
   mainImage.src = gameOptions.correct.image;
+  await hideSpinner()
 }
 
 // winner logic- add to event listeners on option buttons
@@ -284,4 +287,23 @@ function answerPopUpFiller() {
   incorrectModalObjectYear.textContent = gameOptions.correct.year;
   incorrectModalObjectImage.src = gameOptions.correct.image;
   //then after this open the popup
+}
+
+
+// animated popup 
+
+const loadingEl = document.getElementById('animated-loader')
+
+const changeState = document.querySelector(".game-option")
+
+function showSpinner() {
+    
+        loadingEl.style.display = "block";
+        console.log("showspinner")
+   
+}
+
+function hideSpinner() {
+  loadingEl.style.display = "none";
+  console.log("hidespinner")
 }
