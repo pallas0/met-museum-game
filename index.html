@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Met Guess</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
@@ -60,6 +61,18 @@
             </div>
             <!--end of card-->
         </div><!--end of card-->
+        <div id="animated-loader" class="" style="">
+            <svg id="mdot" data-name="m-dot" xmlns="http://www.w3.org/2000/svg" viewBox="-180 0 1200 1200">
+                
+                <path fill="white" stroke="none" d="M665.44,304.14v177.7q0,76.68,4.66,104.62t13.26,35.11q16.47,13.62,52.31,13.61l1.43,8.6h-192l1.43-8.6q35.1,0,51.59-12.89,13.6-10.75,15.76-70.22,1.44-23.66,1.44-70.23V178.75L414.66,636.62,207.57,249V480.41q0,71.65,6.81,103.54t21.86,41.56q15,9.68,50.15,9.67l1.44,8.6H111.56l1.43-8.6q26.51,0,39.77-3.94t22.57-21.14q9.3-17.19,11.82-45.85t2.51-83.84V304.86q0-55.17-2.51-83.84t-11.82-45.86Q166,158,152.76,154T113,150.09l-1.43-7.89h96L429,560,611.7,142.2H737.1l-1.43,7.89q-35.85,0-52.31,13.61Q665.44,178.75,665.44,304.14Z"   />
+                <path fill="none" stroke="black" d="M665.44,304.14v177.7q0,76.68,4.66,104.62t13.26,35.11q16.47,13.62,52.31,13.61l1.43,8.6h-192l1.43-8.6q35.1,0,51.59-12.89,13.6-10.75,15.76-70.22,1.44-23.66,1.44-70.23V178.75L414.66,636.62,207.57,249V480.41q0,71.65,6.81,103.54t21.86,41.56q15,9.68,50.15,9.67l1.44,8.6H111.56l1.43-8.6q26.51,0,39.77-3.94t22.57-21.14q9.3-17.19,11.82-45.85t2.51-83.84V304.86q0-55.17-2.51-83.84t-11.82-45.86Q166,158,152.76,154T113,150.09l-1.43-7.89h96L429,560,611.7,142.2H737.1l-1.43,7.89q-35.85,0-52.31,13.61Q665.44,178.75,665.44,304.14Z"   />
+                
+                <circle r="45"  fill="red" >
+                    <animateMotion dur="8s" repeatCount="indefinite" path="M665.44,304.14v177.7q0,76.68,4.66,104.62t13.26,35.11q16.47,13.62,52.31,13.61l1.43,8.6h-192l1.43-8.6q35.1,0,51.59-12.89,13.6-10.75,15.76-70.22,1.44-23.66,1.44-70.23V178.75L414.66,636.62,207.57,249V480.41q0,71.65,6.81,103.54t21.86,41.56q15,9.68,50.15,9.67l1.44,8.6H111.56l1.43-8.6q26.51,0,39.77-3.94t22.57-21.14q9.3-17.19,11.82-45.85t2.51-83.84V304.86q0-55.17-2.51-83.84t-11.82-45.86Q166,158,152.76,154T113,150.09l-1.43-7.89h96L429,560,611.7,142.2H737.1l-1.43,7.89q-35.85,0-52.31,13.61Q665.44,178.75,665.44,304.14Z"   />
+                  </circle>
+              </svg>
+              <div class="loading" id="loading"></div>
+          </div>
     </div> <!--end of our main body row-->
     
         <footer class="footer">
@@ -174,14 +187,13 @@
             </div>
         </div>
     </div>
-    <div style="display: none;" id="loading">loading...</div>
 </div><!--end incorrect answer pop-up-->
-
 
     <!-- linking to our current game.js -->
     <script src="game.js" defer></script>
     <!-- linking to the bootstrap bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="quote-generator.js"></script>
+    <script src="animation.js"></script>
   </body>
 </html>

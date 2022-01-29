@@ -285,3 +285,20 @@ function answerPopUpFiller() {
   incorrectModalObjectImage.src = gameOptions.correct.image;
   //then after this open the popup
 }
+
+
+// animated popup 
+
+const loadingEl = document.getElementById('animated-loader')
+
+const changeState = document.querySelector(".game-option")
+
+function showSpinner() {
+    setTimeout(() => {
+        loadingEl.style.display = "block";
+    }, 5000);
+}
+
+function hideSpinner() {
+  loadingEl.style.display = "none";
+}
